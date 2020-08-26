@@ -1,4 +1,5 @@
 import React from "react";
+import Btn from './Btn';
 
 function DisplayMovies(props) {
   return (
@@ -8,6 +9,7 @@ function DisplayMovies(props) {
           <li key={imdbID}>
             <h2>{Title}</h2>
             <p>{Year}</p>
+            <Btn text="Nominate" />
           </li>
         );
       })}
