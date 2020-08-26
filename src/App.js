@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './Form';
+import SearchMovie from './SearchMovie';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <h1>The Shoppies</h1>
-      <Form />
+      <SearchMovie />
     </div>
   );
 }
