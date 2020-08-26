@@ -3,9 +3,9 @@ import React from "react";
 function DisplayMovies(props) {
   return (
     <ul>
-      {props.movies.map(({ Title, Year }) => {
+      {props.movies.map(({ Title, Year, imdbID }) => {
         return (
-          <li>
+          <li key={imdbID}>
             <h2>{Title}</h2>
             <p>{Year}</p>
           </li>
