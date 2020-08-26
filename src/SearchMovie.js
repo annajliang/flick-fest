@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
+import DisplayMovies from './DisplayMovies';
 
 class Form extends Component {
   constructor() {
     super();
     this.state = {
       userInput: "",
-      movie: [],
+      movies: [],
     };
   }
 
@@ -19,9 +20,9 @@ class Form extends Component {
         },
       });
       this.setState({
-        movie: movieRequest.data.Search,
+        movies: movieRequest.data.Search,
       });
-      console.log(this.state.movie);
+      console.log(this.state.movies);
     } catch (err) {
       console.log(err);
     }
@@ -50,6 +51,7 @@ class Form extends Component {
           />
           <input type="submit" />
         </form>
+        <DisplayMovies movies={this.state.movies} />
       </div>
     );
   }
