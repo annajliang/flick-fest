@@ -11,10 +11,14 @@ class DisplayMovies extends Component {
   }
 
   handleClick = (e) => {
-    this.setState({
-      isDisabled: true,
-      nominatedMoviesArr: [...this.state.nominatedMoviesArr, e.target.id],
-    });
+    if (this.state.nominatedMoviesArr.length < 5) {
+      this.setState({
+        isDisabled: true,
+        nominatedMoviesArr: [...this.state.nominatedMoviesArr, e.target.id],
+      });
+    } else {
+      alert('you cannot nominate anymore movies');
+    }
   };
 
   render() {
