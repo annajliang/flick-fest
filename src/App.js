@@ -10,6 +10,8 @@ class App extends Component {
     this.state = {
       userInput: "",
       movies: [],
+      isDisabled: false,
+      nominatedMoviesArr: [],
     };
   }
 
@@ -27,6 +29,17 @@ class App extends Component {
       console.log(this.state.movies);
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  handleClick = (e) => {
+    if (this.state.nominatedMoviesArr.length < 5) {
+      this.setState({
+        isDisabled: true,
+        nominatedMoviesArr: [...this.state.nominatedMoviesArr, e.target.id],
+      });
+    } else {
+      alert("you cannot nominate anymore movies");
     }
   };
 
@@ -51,7 +64,12 @@ class App extends Component {
           inputFn={this.handleUserInput}
           inputValue={this.state.userInput}
         />
-        <DisplayMovies movies={this.state.movies} />
+        <DisplayMovies
+          movies={this.state.movies}
+          isDisabled={this.state.isDisabled}
+          nominatedMoviesArr={this.state.nominatedMoviesArr}
+          disableBtn={this.handleClick}
+        />
       </div>
     );
   }
