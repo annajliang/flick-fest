@@ -2,7 +2,13 @@ import React from "react";
 
 function Btn(props) {
   return (
-    <button>{props.text}</button>
+    <button
+      disabled={props.nominatedMoviesArr.indexOf(props.btnId) !== -1}
+      onClick={props.disableBtn}
+      id={props.btnId}
+    >
+      {props.text}
+    </button>
   );
 }
 
