@@ -27,26 +27,27 @@ class App extends Component {
       this.setState({
         movies: movieRequest.data.Search,
       });
-      console.log(this.state.movies);
+      // console.log(this.state.movies);
     } catch (err) {
       console.log(err);
     }
   };
 
   handleClick = (id) => {
-    console.log(this.state.movies)
-    console.log(this.state.nominatedMoviesArr);
+    // console.log(this.state.movies)
 
     const movie = this.state.movies.filter(movie => movie.imdbID === id);
     console.log('select', movie);
 
     if (this.state.nominatedMoviesArr.length < 5) {
       this.setState({
-        nominatedMoviesArr: [...this.state.nominatedMoviesArr, id],
+        nominatedMoviesArr: [...this.state.nominatedMoviesArr, id]
       });
     } else {
       alert("you cannot nominate anymore movies");
     }
+
+     console.log(this.state.nominatedMoviesArr);
   };
 
   handleSubmit = (e) => {
