@@ -1,48 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import Btn from "./Btn";
 
-class DisplayMovies extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isDisabled: false,
-      nominatedMoviesArr: [],
-    };
-  }
-
-  handleClick = (e) => {
-    if (this.state.nominatedMoviesArr.length < 5) {
-      this.setState({
-        isDisabled: true,
-        nominatedMoviesArr: [...this.state.nominatedMoviesArr, e.target.id],
-      });
-    } else {
-      alert('you cannot nominate anymore movies');
-    }
-  };
-
-  render() {
-    console.log(this.state.nominatedMoviesArr);
-    return (
+const DisplayMovies = (props) => {
+  return (
       <ul>
-        {this.props.movies.map(({ Title, Year, imdbID }) => {
+        {props.movies.map(({ Title, Year, imdbID }) => {
           return (
             <li key={imdbID}>
               <h2>{Title}</h2>
               <p>{Year}</p>
               <Btn
                 text="Nominate"
-                isDisabled={this.state.isDisabled}
-                nominatedMoviesArr={this.state.nominatedMoviesArr}
-                disableBtn={this.handleClick}
-                btnId={imdbID}
+                nominateBtn={props.nominateBtn}
+                nominatedMovieIds={props.nominatedMovieIds.indexOf(imdbID) !== -1}
+                movieId={imdbID}
+                movieTitle={Title}
+                movieYear={Year}
               />
             </li>
           );
         })}
       </ul>
     );
-  }
 }
 
 export default DisplayMovies;

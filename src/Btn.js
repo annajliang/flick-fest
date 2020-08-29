@@ -3,9 +3,9 @@ import React from "react";
 function Btn(props) {
   return (
     <button
-      disabled={props.nominatedMoviesArr.indexOf(props.btnId) !== -1}
-      onClick={props.disableBtn}
-      id={props.btnId}
+      onClick={() => props.nominateBtn(props.movieId)}
+      id={props.movieId}
+      disabled={props.nominatedMovieIds}
     >
       {props.text}
     </button>
