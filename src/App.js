@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import SearchMovie from "./SearchMovie";
 import DisplayMovies from "./DisplayMovies";
+import NominatedMovies from "./NominatedMovies";
 import "./App.css";
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
       movies: [],
       // isDisabled: false,
       // disabledBtnsArr: [],
-      nominatedMoviesArr: [],
+      nominatedMovieIds: [],
     };
   }
 
@@ -34,20 +35,21 @@ class App extends Component {
   };
 
   handleClick = (id) => {
-    // console.log(this.state.movies)
+    console.log('all movies', this.state.movies)
+    console.log('nominated movies id', this.state.nominatedMovieIds);
 
-    const movie = this.state.movies.filter(movie => movie.imdbID === id);
-    console.log('select', movie);
+    // const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovieIds.includes(movie.imdbID));
 
-    if (this.state.nominatedMoviesArr.length < 5) {
+    // console.log('nom movie', nominatedMovies);
+
+    if (this.state.nominatedMovieIds.length < 5) {
       this.setState({
-        nominatedMoviesArr: [...this.state.nominatedMoviesArr, id]
+        nominatedMovieIds: [...this.state.nominatedMovieIds, id]
       });
     } else {
       alert("you cannot nominate anymore movies");
     }
-
-     console.log(this.state.nominatedMoviesArr);
+    //  console.log('nominated list', this.state.nominatedMovieIds);
   };
 
   handleSubmit = (e) => {
@@ -56,25 +58,34 @@ class App extends Component {
   };
 
   handleUserInput = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({
       userInput: e.target.value,
     });
   };
 
   render() {
+    const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovieIds.includes(movie.imdbID));
+
+    console.log('nom movie', nominatedMovies);
+
     return (
       <div className="App">
         <h1>The Shoppies</h1>
         <SearchMovie
           submitFn={this.handleSubmit}
-          inputFn={this.handleUserInput}
+          inputFn={this.handleUserInput} 
           inputValue={this.state.userInput}
         />
         <DisplayMovies
           movies={this.state.movies}
-          nominatedMoviesArr={this.state.nominatedMoviesArr}
+          nominatedMovieIds={this.state.nominatedMovieIds}
           nominateBtn={this.handleClick}
+        />
+        <NominatedMovies 
+          movies={this.state.movies}
+          nominatedMovieIds={this.state.nominatedMovieIds}
+          nominatedMovies={nominatedMovies}
         />
       </div>
     );
