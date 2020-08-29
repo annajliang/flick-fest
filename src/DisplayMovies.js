@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Btn from "./Btn";
 
 const DisplayMovies = (props) => {
@@ -11,10 +11,10 @@ const DisplayMovies = (props) => {
               <p>{Year}</p>
               <Btn
                 text="Nominate"
-                isDisabled={props.isDisabled}
-                nominatedMoviesArr={props.nominatedMoviesArr}
-                disableBtn={props.disableBtn}
+                nominateBtn={props.nominateBtn}
                 btnId={imdbID}
+                movieTitle={Title}
+                movieYear={Year}
               />
             </li>
           );

@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       userInput: "",
       movies: [],
-      isDisabled: false,
+      // isDisabled: false,
+      // disabledBtnsArr: [],
       nominatedMoviesArr: [],
     };
   }
@@ -32,11 +33,16 @@ class App extends Component {
     }
   };
 
-  handleClick = (e) => {
+  handleClick = (id) => {
+    console.log(this.state.movies)
+    console.log(this.state.nominatedMoviesArr);
+
+    const movie = this.state.movies.filter(movie => movie.imdbID === id);
+    console.log('select', movie);
+
     if (this.state.nominatedMoviesArr.length < 5) {
       this.setState({
-        isDisabled: true,
-        nominatedMoviesArr: [...this.state.nominatedMoviesArr, e.target.id],
+        nominatedMoviesArr: [...this.state.nominatedMoviesArr, id],
       });
     } else {
       alert("you cannot nominate anymore movies");
@@ -66,9 +72,8 @@ class App extends Component {
         />
         <DisplayMovies
           movies={this.state.movies}
-          isDisabled={this.state.isDisabled}
           nominatedMoviesArr={this.state.nominatedMoviesArr}
-          disableBtn={this.handleClick}
+          nominateBtn={this.handleClick}
         />
       </div>
     );
