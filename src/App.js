@@ -67,7 +67,8 @@ class App extends Component {
   };
 
   render() {
-    const nonimatedMoviesID = this.state.nominatedMovies.map((nominatedMovie) => nominatedMovie.imdbID)
+    const nonimatedMoviesID = this.state.nominatedMovies.map(nominatedMovie => nominatedMovie.imdbID);
+    
     return (
       <div className="App">
         <h1>The Shoppies</h1>

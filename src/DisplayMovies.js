@@ -14,7 +14,7 @@ const DisplayMovies = (props) => {
               <Btn
                 text="Nominate"
                 nominateBtn={props.nominateBtn}
-                nonimatedMoviesID={props.nonimatedMoviesID.indexOf(imdbID) !== -1}
+                nonimatedMoviesID={props.nonimatedMoviesID.includes(imdbID)}
                 movieId={imdbID}
                 movieTitle={Title}
                 movieYear={Year}
