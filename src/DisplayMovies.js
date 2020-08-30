@@ -2,6 +2,8 @@ import React from "react";
 import Btn from "./Btn";
 
 const DisplayMovies = (props) => {
+  // console.log('PROP', props.nominatedMovies)
+
   return (
       <ul>
         {props.movies.map(({ Title, Year, imdbID }) => {
@@ -12,7 +14,7 @@ const DisplayMovies = (props) => {
               <Btn
                 text="Nominate"
                 nominateBtn={props.nominateBtn}
-                nominatedMovies={props.nominatedMovies.indexOf(imdbID) !== -1}
+                nonimatedMoviesID={props.nonimatedMoviesID.indexOf(imdbID) !== -1}
                 movieId={imdbID}
                 movieTitle={Title}
                 movieYear={Year}

@@ -65,6 +65,7 @@ class App extends Component {
   };
 
   render() {
+    const nonimatedMoviesID = this.state.nominatedMovies.map((nominatedMovie) => nominatedMovie.imdbID)
     return (
       <div className="App">
         <h1>The Shoppies</h1>
@@ -75,7 +76,7 @@ class App extends Component {
         />
         <DisplayMovies
           movies={this.state.movies}
-          nominatedMovies={this.state.nominatedMovies}
+          nonimatedMoviesID={nonimatedMoviesID}
           nominateBtn={this.handleClick}
         />
         <NominatedMovies 
