@@ -27,25 +27,18 @@ class App extends Component {
       this.setState({
         movies: moviesOnly,
       });
-      // console.log('MOVIES', this.state.movies)
     } catch (err) {
       console.log(err);
     }
   };
 
   handleClick = (id) => {
-    // console.log('all movies', this.state.movies)
-    // console.log('nominated movies', this.state.nominatedMovies);
-
-    // const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovies.includes(movie.imdbID));
-
     const clickedMovie = this.state.movies.find(movie => movie.imdbID === id);
 
     console.log('nom movie', clickedMovie);
 
     if (this.state.nominatedMovies.length < 5) {
       this.setState({
-        // nominatedMovies: [...this.state.nominatedMovies, id]
         nominatedMovies: [...this.state.nominatedMovies, clickedMovie]
       });
     } else {
@@ -60,7 +53,6 @@ class App extends Component {
   };
 
   handleUserInput = (e) => {
-    // console.log(e.target.value);
     this.setState({
       userInput: e.target.value,
     });

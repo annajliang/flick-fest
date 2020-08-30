@@ -2,9 +2,6 @@ import React from "react";
 import Btn from "./Btn";
 
 const NominatedMovies = (props) => {
-  // console.log('props', props);
-// const movie = props.movies.filter(movie => movie.imdbID.includes(props.nominatedMoviesArr));
-// console.log('MOVIE', movie);
   return (
     <div>
       <h2>Nominated Movies:</h2>

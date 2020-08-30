@@ -2,8 +2,6 @@ import React from "react";
 import Btn from "./Btn";
 
 const DisplayMovies = (props) => {
-  // console.log('PROP', props.nominatedMovies)
-
   return (
     <div>
       <h2>Movies Searches:</h2>
