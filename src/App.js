@@ -32,7 +32,7 @@ class App extends Component {
     }
   };
 
-  handleClick = (id) => {
+  nominateMovie = (id) => {
     const clickedMovie = this.state.movies.find(movie => movie.imdbID === id);
 
     console.log('nom movie', clickedMovie);
@@ -82,7 +82,7 @@ class App extends Component {
         <DisplayMovies
           movies={this.state.movies}
           nonimatedMoviesID={nonimatedMoviesID}
-          nominateBtn={this.handleClick}
+          nominateBtn={this.nominateMovie}
         />
         <NominatedMovies 
           movies={this.state.movies}
