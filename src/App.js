@@ -48,9 +48,13 @@ class App extends Component {
   };
 
   removeMovie = (id) => {
-    // const arr = this.state.nominatedMovies;
-    // console.log('arr', arr);
-    console.log('id', id);
+    const newNominatedMovies = this.state.nominatedMovies.filter(nominatedMovie => nominatedMovie.imdbID !== id);
+
+    this.setState({
+        nominatedMovies: [...newNominatedMovies]
+    });   
+
+    // console.log('NEW MOVIES', this.state.nominatedMovies);
   }
 
   handleSubmit = (e) => {
