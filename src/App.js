@@ -44,8 +44,14 @@ class App extends Component {
     } else {
       alert("you cannot nominate anymore movies");
     }
-     console.log('nominated list', this.state.nominatedMovies);
+    //  console.log('nominated list', this.state.nominatedMovies);
   };
+
+  removeMovie = (id) => {
+    // const arr = this.state.nominatedMovies;
+    // console.log('arr', arr);
+    console.log('id', id);
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -77,6 +83,7 @@ class App extends Component {
         <NominatedMovies 
           movies={this.state.movies}
           nominatedMovies={this.state.nominatedMovies}
+          removeBtn={this.removeMovie}
         />
       </div>
     );

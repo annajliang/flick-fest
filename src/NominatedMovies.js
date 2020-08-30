@@ -1,5 +1,5 @@
 import React from "react";
-import Btn from "./Btn";
+import RemoveBtn from "./RemoveBtn";
 
 const NominatedMovies = (props) => {
   return (
@@ -11,9 +11,10 @@ const NominatedMovies = (props) => {
             <li key={imdbID}>
               <h2>{Title}</h2>
               <p>{Year}</p>
-              <Btn
+              <RemoveBtn
                 text="Remove"
-                nominateBtn={props.nominateBtn}
+                removeBtn={props.removeBtn}
+                movieId={imdbID}
               />
             </li>
           );
