@@ -11,9 +11,7 @@ class App extends Component {
     this.state = {
       userInput: "",
       movies: [],
-      // isDisabled: false,
-      // disabledBtnsArr: [],
-      nominatedMovieIds: [],
+      nominatedMovies: [],
     };
   }
 
@@ -28,28 +26,30 @@ class App extends Component {
       this.setState({
         movies: movieRequest.data.Search,
       });
-      // console.log(this.state.movies);
     } catch (err) {
       console.log(err);
     }
   };
 
   handleClick = (id) => {
-    console.log('all movies', this.state.movies)
-    console.log('nominated movies id', this.state.nominatedMovieIds);
+    // console.log('all movies', this.state.movies)
+    // console.log('nominated movies', this.state.nominatedMovies);
 
-    // const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovieIds.includes(movie.imdbID));
+    // const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovies.includes(movie.imdbID));
 
-    // console.log('nom movie', nominatedMovies);
+    const clickedMovie = this.state.movies.find(movie => movie.imdbID === id);
 
-    if (this.state.nominatedMovieIds.length < 5) {
+    console.log('nom movie', clickedMovie);
+
+    if (this.state.nominatedMovies.length < 5) {
       this.setState({
-        nominatedMovieIds: [...this.state.nominatedMovieIds, id]
+        // nominatedMovies: [...this.state.nominatedMovies, id]
+        nominatedMovies: [...this.state.nominatedMovies, clickedMovie]
       });
     } else {
       alert("you cannot nominate anymore movies");
     }
-    //  console.log('nominated list', this.state.nominatedMovieIds);
+     console.log('nominated list', this.state.nominatedMovies);
   };
 
   handleSubmit = (e) => {
@@ -65,10 +65,6 @@ class App extends Component {
   };
 
   render() {
-    const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovieIds.includes(movie.imdbID));
-
-    console.log('nom movie', nominatedMovies);
-
     return (
       <div className="App">
         <h1>The Shoppies</h1>
@@ -79,13 +75,12 @@ class App extends Component {
         />
         <DisplayMovies
           movies={this.state.movies}
-          nominatedMovieIds={this.state.nominatedMovieIds}
+          nominatedMovies={this.state.nominatedMovies}
           nominateBtn={this.handleClick}
         />
         <NominatedMovies 
           movies={this.state.movies}
-          nominatedMovieIds={this.state.nominatedMovieIds}
-          nominatedMovies={nominatedMovies}
+          nominatedMovies={this.state.nominatedMovies}
         />
       </div>
     );

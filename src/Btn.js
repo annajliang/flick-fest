@@ -5,7 +5,7 @@ function Btn(props) {
     <button
       onClick={() => props.nominateBtn(props.movieId)}
       id={props.movieId}
-      disabled={props.nominatedMovieIds}
+      disabled={props.nominatedMovies}
     >
       {props.text}
     </button>

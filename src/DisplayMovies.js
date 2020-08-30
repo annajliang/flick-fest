@@ -12,7 +12,7 @@ const DisplayMovies = (props) => {
               <Btn
                 text="Nominate"
                 nominateBtn={props.nominateBtn}
-                nominatedMovieIds={props.nominatedMovieIds.indexOf(imdbID) !== -1}
+                nominatedMovies={props.nominatedMovies.indexOf(imdbID) !== -1}
                 movieId={imdbID}
                 movieTitle={Title}
                 movieYear={Year}
