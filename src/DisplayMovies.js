@@ -5,6 +5,8 @@ const DisplayMovies = (props) => {
   // console.log('PROP', props.nominatedMovies)
 
   return (
+    <div>
+      <h2>Movies Searches:</h2>
       <ul>
         {props.movies.map(({ Title, Year, imdbID }) => {
           return (
@@ -23,6 +25,7 @@ const DisplayMovies = (props) => {
           );
         })}
       </ul>
+    </div>
     );
 }
 

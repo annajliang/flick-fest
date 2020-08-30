@@ -6,6 +6,8 @@ const NominatedMovies = (props) => {
 // const movie = props.movies.filter(movie => movie.imdbID.includes(props.nominatedMoviesArr));
 // console.log('MOVIE', movie);
   return (
+    <div>
+      <h2>Nominated Movies:</h2>
       <ul>
         {props.nominatedMovies.map(({ Title, Year, imdbID }) => {
           return (
@@ -20,6 +22,7 @@ const NominatedMovies = (props) => {
           );
         })}
       </ul>
+    </div>
     );
 }
 
