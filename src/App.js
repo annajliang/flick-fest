@@ -23,9 +23,11 @@ class App extends Component {
           s: this.state.userInput,
         },
       });
+      const moviesOnly = movieRequest.data.Search.filter(movie => movie.Type === 'movie');
       this.setState({
-        movies: movieRequest.data.Search,
+        movies: moviesOnly,
       });
+      // console.log('MOVIES', this.state.movies)
     } catch (err) {
       console.log(err);
     }
