@@ -11,9 +11,7 @@ class App extends Component {
     this.state = {
       userInput: "",
       movies: [],
-      // isDisabled: false,
-      // disabledBtnsArr: [],
-      nominatedMovieIds: [],
+      nominatedMovies: [],
     };
   }
 
@@ -25,32 +23,39 @@ class App extends Component {
           s: this.state.userInput,
         },
       });
+      const moviesOnly = movieRequest.data.Search.filter(movie => movie.Type === 'movie');
       this.setState({
-        movies: movieRequest.data.Search,
+        movies: moviesOnly,
       });
-      // console.log(this.state.movies);
     } catch (err) {
       console.log(err);
     }
   };
 
-  handleClick = (id) => {
-    console.log('all movies', this.state.movies)
-    console.log('nominated movies id', this.state.nominatedMovieIds);
+  nominateMovie = (id) => {
+    const clickedMovie = this.state.movies.find(movie => movie.imdbID === id);
 
-    // const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovieIds.includes(movie.imdbID));
+    console.log('nom movie', clickedMovie);
 
-    // console.log('nom movie', nominatedMovies);
-
-    if (this.state.nominatedMovieIds.length < 5) {
+    if (this.state.nominatedMovies.length < 5) {
       this.setState({
-        nominatedMovieIds: [...this.state.nominatedMovieIds, id]
+        nominatedMovies: [...this.state.nominatedMovies, clickedMovie]
       });
     } else {
       alert("you cannot nominate anymore movies");
     }
-    //  console.log('nominated list', this.state.nominatedMovieIds);
+    //  console.log('nominated list', this.state.nominatedMovies);
   };
+
+  removeMovie = (id) => {
+    const newNominatedMovies = this.state.nominatedMovies.filter(nominatedMovie => nominatedMovie.imdbID !== id);
+
+    this.setState({
+        nominatedMovies: [...newNominatedMovies]
+    });   
+
+    // console.log('NEW MOVIES', this.state.nominatedMovies);
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -58,17 +63,14 @@ class App extends Component {
   };
 
   handleUserInput = (e) => {
-    // console.log(e.target.value);
     this.setState({
       userInput: e.target.value,
     });
   };
 
   render() {
-    const nominatedMovies = this.state.movies.filter(movie => this.state.nominatedMovieIds.includes(movie.imdbID));
-
-    console.log('nom movie', nominatedMovies);
-
+    const nonimatedMoviesID = this.state.nominatedMovies.map(nominatedMovie => nominatedMovie.imdbID);
+    
     return (
       <div className="App">
         <h1>The Shoppies</h1>
@@ -79,13 +81,13 @@ class App extends Component {
         />
         <DisplayMovies
           movies={this.state.movies}
-          nominatedMovieIds={this.state.nominatedMovieIds}
-          nominateBtn={this.handleClick}
+          nonimatedMoviesID={nonimatedMoviesID}
+          nominateBtn={this.nominateMovie}
         />
         <NominatedMovies 
           movies={this.state.movies}
-          nominatedMovieIds={this.state.nominatedMovieIds}
-          nominatedMovies={nominatedMovies}
+          nominatedMovies={this.state.nominatedMovies}
+          removeBtn={this.removeMovie}
         />
       </div>
     );
