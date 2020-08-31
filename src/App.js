@@ -3,6 +3,7 @@ import axios from "axios";
 import SearchMovie from "./SearchMovie";
 import DisplayMovies from "./DisplayMovies";
 import NominatedMovies from "./NominatedMovies";
+import NoResults from "./NoResults";
 import "./App.css";
 
 class App extends Component {
@@ -16,17 +17,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const savedList = window.localStorage.getItem('savedNominees');
+    const savedList = window.localStorage.getItem("savedNominees");
     const parsedList = JSON.parse(savedList);
-    console.log('what dis', parsedList)
 
     if (parsedList !== null) {
       this.setState({
         nominatedMovies: [...parsedList],
-      })
+      });
     }
-
-    console.log('TEST:', this.state.nominatedMovies)
   }
 
   getMovies = async () => {
@@ -37,26 +35,34 @@ class App extends Component {
           s: this.state.userInput,
         },
       });
-      const moviesOnly = movieRequest.data.Search.filter(movie => movie.Type === 'movie');
+      const moviesOnly = movieRequest.data.Search.filter(
+        (movie) => movie.Type === "movie"
+      );
       this.setState({
         movies: moviesOnly,
       });
     } catch (err) {
-      console.log(err);
+      console.log(`Sorry we could not find ${this.state.userInput}.`);
     }
   };
 
   nominateMovie = (id) => {
-    const clickedMovie = this.state.movies.find(movie => movie.imdbID === id);
+    const clickedMovie = this.state.movies.find((movie) => movie.imdbID === id);
 
-    console.log('nom movie', clickedMovie);
+    console.log("nom movie", clickedMovie);
 
     if (this.state.nominatedMovies.length < 5) {
-      this.setState({
-        nominatedMovies: [...this.state.nominatedMovies, clickedMovie]
-      }, () => {
-        window.localStorage.setItem('savedNominees', JSON.stringify(this.state.nominatedMovies));
-      });
+      this.setState(
+        {
+          nominatedMovies: [...this.state.nominatedMovies, clickedMovie],
+        },
+        () => {
+          window.localStorage.setItem(
+            "savedNominees",
+            JSON.stringify(this.state.nominatedMovies)
+          );
+        }
+      );
     } else {
       alert("you cannot nominate anymore movies");
     }
@@ -64,16 +70,24 @@ class App extends Component {
   };
 
   removeMovie = (id) => {
-    const newNominatedMovies = this.state.nominatedMovies.filter(nominatedMovie => nominatedMovie.imdbID !== id);
+    const newNominatedMovies = this.state.nominatedMovies.filter(
+      (nominatedMovie) => nominatedMovie.imdbID !== id
+    );
 
-    this.setState({
-        nominatedMovies: [...newNominatedMovies]
-    }, () => {
-      window.localStorage.setItem('savedNominees', JSON.stringify(this.state.nominatedMovies));
-    });   
+    this.setState(
+      {
+        nominatedMovies: [...newNominatedMovies],
+      },
+      () => {
+        window.localStorage.setItem(
+          "savedNominees",
+          JSON.stringify(this.state.nominatedMovies)
+        );
+      }
+    );
 
     // console.log('NEW MOVIES', this.state.nominatedMovies);
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -87,22 +101,28 @@ class App extends Component {
   };
 
   render() {
-    const nonimatedMoviesID = this.state.nominatedMovies.map(nominatedMovie => nominatedMovie.imdbID);
-    
+    const nonimatedMoviesID = this.state.nominatedMovies.map(
+      (nominatedMovie) => nominatedMovie.imdbID
+    );
+
     return (
       <div className="App">
         <h1>The Shoppies</h1>
         <SearchMovie
           submitFn={this.handleSubmit}
-          inputFn={this.handleUserInput} 
+          inputFn={this.handleUserInput}
           inputValue={this.state.userInput}
         />
-        <DisplayMovies
-          movies={this.state.movies}
-          nonimatedMoviesID={nonimatedMoviesID}
-          nominateBtn={this.nominateMovie}
-        />
-        <NominatedMovies 
+        {this.state.movies.length > 0 ? (
+          <DisplayMovies
+            movies={this.state.movies}
+            nonimatedMoviesID={nonimatedMoviesID}
+            nominateBtn={this.nominateMovie}
+          />
+        ) : (
+          <NoResults userInput={this.state.userInput} />
+        )}
+        <NominatedMovies
           movies={this.state.movies}
           nominatedMovies={this.state.nominatedMovies}
           removeBtn={this.removeMovie}
