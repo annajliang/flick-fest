@@ -4,6 +4,7 @@ import SearchMovie from "./SearchMovie";
 import DisplayMovies from "./DisplayMovies";
 import NominatedMovies from "./NominatedMovies";
 import NoResults from "./NoResults";
+import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
 class App extends Component {
@@ -106,6 +107,11 @@ class App extends Component {
       (nominatedMovie) => nominatedMovie.imdbID
     );
 
+    // add 'no poster available' image if movie poster is not available
+    const moviePoster = (imgUrl) => {
+      return imgUrl === 'N/A' ? noPoster : imgUrl;
+    };
+
     console.log('MOVIES', this.state.movies)
 
     return (
@@ -123,12 +129,14 @@ class App extends Component {
             movies={this.state.movies}
             nonimatedMoviesIds={nonimatedMoviesIds}
             nominateMovie={this.nominateMovie}
+            moviePoster={moviePoster}
           />
         )}
         <NominatedMovies
           movies={this.state.movies}
           nominatedMovies={this.state.nominatedMovies}
           removeMovie={this.removeMovie}
+          moviePoster={moviePoster}
         />
       </div>
     );
