@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      userInput: "",
+      userInput: '',
       movies: [],
       nominatedMovies: [],
     };
@@ -36,20 +36,14 @@ class App extends Component {
           s: this.state.userInput,
         },
       });
-
       const moviesOnly = movieResult.data.Search.filter(
         (movie) => movie.Type === "movie"
       );
-
       this.setState({
         movies: moviesOnly,
       });
     } catch (err) {
-      console.log(err);
-
-      this.setState({
-        movies: [],
-      });
+      console.log(`Sorry we could not find ${this.state.userInput}.`);
     }
   };
 
@@ -73,6 +67,7 @@ class App extends Component {
     } else {
       alert("you cannot nominate anymore movies");
     }
+    //  console.log('nominated list', this.state.nominatedMovies);
   };
 
   removeMovie = (id) => {
@@ -91,29 +86,20 @@ class App extends Component {
         );
       }
     );
+
+    // console.log('NEW MOVIES', this.state.nominatedMovies);
   };
 
-  // handleSubmit = (e) => {
-  //   console.log('user input:', this.state.userInput);
-  //   e.preventDefault();
-  //   this.getMovies();
-  // };
+  handleSubmit = (e) => {
+    console.log('user input:', this.state.userInput);
+    e.preventDefault();
+    this.getMovies();
+  };
 
-  // handleUserInput = (e) => {
-  //   this.setState({
-  //     userInput: e.target.value,
-  //   });
-  // };
-
-  submitMovieSearch = (userInput) => {
-    this.setState(
-      {
-        userInput: userInput.replace(/\s+/g, ' ').trim(),
-      },
-      () => {
-        this.getMovies();
-      }
-    );
+  handleChange = (e) => {
+    this.setState({
+      userInput: e.target.value,
+    });
   };
 
   render() {
@@ -123,21 +109,20 @@ class App extends Component {
 
     // add 'no poster available' image if movie poster is not available
     const moviePoster = (imgUrl) => {
-      return imgUrl === "N/A" ? noPoster : imgUrl;
+      return imgUrl === 'N/A' ? noPoster : imgUrl;
     };
 
-    // console.log("MOVIES", this.state.movies);
+    console.log('MOVIES', this.state.movies)
 
     return (
       <div className="App">
         <h1>The Shoppies</h1>
         <SearchMovie
-          submitMovieSearch={this.submitMovieSearch}
-          // handleSubmit={this.handleSubmit}
-          // handleUserInput={this.handleUserInput}
-          // userInput={this.state.userInput}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          userInput={this.state.userInput}
         />
-        {this.state.movies.length === 0 && this.state.userInput !== "" ? (
+        {this.state.movies.length === 0 && this.state.userInput !== '' ? (
           <NoResults userInput={this.state.userInput} />
         ) : (
           <DisplayMovies
