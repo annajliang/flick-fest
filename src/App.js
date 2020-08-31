@@ -43,7 +43,10 @@ class App extends Component {
         movies: moviesOnly,
       });
     } catch (err) {
-      console.log(`Sorry we could not find ${this.state.userInput}.`);
+      console.log('err');
+      this.setState({
+        movies: [],
+      });
     }
   };
 
