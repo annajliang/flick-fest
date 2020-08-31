@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      userInput: "",
+      userInput: '',
       movies: [],
       nominatedMovies: [],
     };
@@ -90,6 +90,7 @@ class App extends Component {
   };
 
   handleSubmit = (e) => {
+    console.log('user input:', this.state.userInput);
     e.preventDefault();
     this.getMovies();
   };
@@ -105,22 +106,24 @@ class App extends Component {
       (nominatedMovie) => nominatedMovie.imdbID
     );
 
+    console.log('MOVIES', this.state.movies)
+
     return (
       <div className="App">
         <h1>The Shoppies</h1>
         <SearchMovie
-          submitFn={this.handleSubmit}
-          inputFn={this.handleUserInput}
-          inputValue={this.state.userInput}
+          handleSubmit={this.handleSubmit}
+          handleUserInput={this.handleUserInput}
+          userInput={this.state.userInput}
         />
-        {this.state.movies.length > 0 ? (
+        {this.state.movies.length === 0 && this.state.userInput !== '' ? (
+          <NoResults userInput={this.state.userInput} />
+        ) : (
           <DisplayMovies
             movies={this.state.movies}
             nonimatedMoviesIds={nonimatedMoviesIds}
             nominateMovie={this.nominateMovie}
           />
-        ) : (
-          <NoResults userInput={this.state.userInput} />
         )}
         <NominatedMovies
           movies={this.state.movies}
