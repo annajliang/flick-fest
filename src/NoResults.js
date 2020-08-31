@@ -2,9 +2,9 @@ import React from "react";
 
 const NoResults = ({ userInput }) => {
   return (
-    <div className="tryAgain">
-      <h3>Sorry we couldn't find {userInput} </h3>
-      <p>Check your spelling or try a simpler search</p>
+    <div>
+      <h3>Sorry, but we couldn't find {userInput}.</h3>
+      <p>Please check your spelling or try again!</p>
     </div>
   );
 };
