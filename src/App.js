@@ -15,6 +15,20 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const savedList = window.localStorage.getItem('savedNominees');
+    const parsedList = JSON.parse(savedList);
+    console.log('what dis', parsedList)
+
+    if (parsedList !== null) {
+      this.setState({
+        nominatedMovies: [...parsedList],
+      })
+    }
+
+    console.log('TEST:', this.state.nominatedMovies)
+  }
+
   getMovies = async () => {
     try {
       const movieRequest = await axios.get("https://www.omdbapi.com/", {
@@ -40,6 +54,8 @@ class App extends Component {
     if (this.state.nominatedMovies.length < 5) {
       this.setState({
         nominatedMovies: [...this.state.nominatedMovies, clickedMovie]
+      }, () => {
+        window.localStorage.setItem('savedNominees', JSON.stringify(this.state.nominatedMovies));
       });
     } else {
       alert("you cannot nominate anymore movies");
@@ -52,6 +68,8 @@ class App extends Component {
 
     this.setState({
         nominatedMovies: [...newNominatedMovies]
+    }, () => {
+      window.localStorage.setItem('savedNominees', JSON.stringify(this.state.nominatedMovies));
     });   
 
     // console.log('NEW MOVIES', this.state.nominatedMovies);
