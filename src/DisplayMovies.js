@@ -13,8 +13,8 @@ const DisplayMovies = (props) => {
               <p>{Year}</p>
               <NominateBtn
                 text="Nominate"
-                nominateBtn={props.nominateBtn}
-                nonimatedMoviesID={props.nonimatedMoviesID.includes(imdbID)}
+                nominateMovie={props.nominateMovie}
+                nonimatedMoviesIds={props.nonimatedMoviesIds.includes(imdbID)}
                 movieId={imdbID}
                 movieTitle={Title}
                 movieYear={Year}

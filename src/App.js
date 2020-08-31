@@ -29,13 +29,13 @@ class App extends Component {
 
   getMovies = async () => {
     try {
-      const movieRequest = await axios.get("https://www.omdbapi.com/", {
+      const movieResult = await axios.get("https://www.omdbapi.com/", {
         params: {
           apikey: "e3ae5908",
           s: this.state.userInput,
         },
       });
-      const moviesOnly = movieRequest.data.Search.filter(
+      const moviesOnly = movieResult.data.Search.filter(
         (movie) => movie.Type === "movie"
       );
       this.setState({
@@ -101,7 +101,7 @@ class App extends Component {
   };
 
   render() {
-    const nonimatedMoviesID = this.state.nominatedMovies.map(
+    const nonimatedMoviesIds = this.state.nominatedMovies.map(
       (nominatedMovie) => nominatedMovie.imdbID
     );
 
@@ -116,8 +116,8 @@ class App extends Component {
         {this.state.movies.length > 0 ? (
           <DisplayMovies
             movies={this.state.movies}
-            nonimatedMoviesID={nonimatedMoviesID}
-            nominateBtn={this.nominateMovie}
+            nonimatedMoviesIds={nonimatedMoviesIds}
+            nominateMovie={this.nominateMovie}
           />
         ) : (
           <NoResults userInput={this.state.userInput} />
@@ -125,7 +125,7 @@ class App extends Component {
         <NominatedMovies
           movies={this.state.movies}
           nominatedMovies={this.state.nominatedMovies}
-          removeBtn={this.removeMovie}
+          removeMovie={this.removeMovie}
         />
       </div>
     );

@@ -13,7 +13,7 @@ const NominatedMovies = (props) => {
               <p>{Year}</p>
               <RemoveBtn
                 text="Remove"
-                removeBtn={props.removeBtn}
+                removeMovie={props.removeMovie}
                 movieId={imdbID}
               />
             </li>
