@@ -1,7 +1,14 @@
 import React from "react";
 import NominateBtn from "./NominateBtn";
+import noPoster from "./assets/noPoster.jpg";
 
 const DisplayMovies = (props) => {
+
+  // add 'no poster available' image if movie poster is not available
+  const moviePoster = (imgUrl) => {
+    return imgUrl === 'N/A' ? noPoster : imgUrl;
+  };
+
   return (
     <div>
       <h2>Movies Searches:</h2>
@@ -9,7 +16,7 @@ const DisplayMovies = (props) => {
         {props.movies.map(({ Title, Year, imdbID, Poster }) => {
           return (
             <li key={imdbID}>
-              <img src={Poster} alt="Poster of movie" />
+              <img src={moviePoster(Poster)} alt="Poster of movie" />
               <h2>{Title}</h2>
               <p>{Year}</p>
               <NominateBtn
