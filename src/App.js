@@ -14,7 +14,7 @@ class App extends Component {
       userInput: '',
       movies: [],
       nominatedMovies: [],
-      requestStatus: 'pending',
+      requestStatus: 'ready',
       searchedInput: ''
     };
   }
@@ -128,7 +128,7 @@ class App extends Component {
         {this.state.requestStatus === 'failure' && (
           <NoResults searchedInput={this.state.searchedInput} />
         )}
-        {this.state.requestStatus === 'pending' && (
+        {this.state.requestStatus === 'ready' && (
           <p>Please begin your search</p>
         )}
         {this.state.requestStatus === 'success' && (
