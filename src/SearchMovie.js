@@ -3,7 +3,15 @@ import React from "react";
 const SearchMovie = (props) => {
   return (
     <form action="input" onSubmit={props.handleSubmit}>
-      <input type="text" onChange={props.handleUserInput} value={props.userInput} />
+      <input
+        type="search"
+        id="searchMovie"
+        name="searchMovie"
+        onChange={props.handleUserInput}
+        value={props.userInput}
+        placeholder="Enter your movie"
+        required
+      />
       <input type="submit" />
     </form>
   );
