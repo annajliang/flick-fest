@@ -1,9 +1,9 @@
 import React from "react";
 
-const NoResults = ({ userInput }) => {
+const NoResults = ({ searchedInput }) => {
   return (
     <div>
-      <h3>Sorry, but we couldn't find {userInput}.</h3>
+      <h3>Sorry, but we couldn't find {searchedInput}.</h3>
       <p>Please check your spelling or try again!</p>
     </div>
   );

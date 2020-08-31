@@ -15,6 +15,7 @@ class App extends Component {
       movies: [],
       nominatedMovies: [],
       requestStatus: 'pending',
+      searchedInput: ''
     };
   }
 
@@ -49,6 +50,7 @@ class App extends Component {
       this.setState({
         movies: [],
         requestStatus: 'failure',
+        searchedInput: this.state.userInput
       });
     }
   };
@@ -73,7 +75,6 @@ class App extends Component {
     } else {
       alert("you cannot nominate anymore movies");
     }
-    //  console.log('nominated list', this.state.nominatedMovies);
   };
 
   removeMovie = (id) => {
@@ -92,12 +93,10 @@ class App extends Component {
         );
       }
     );
-
-    // console.log('NEW MOVIES', this.state.nominatedMovies);
   };
 
   handleSubmit = (e) => {
-    console.log('user input:', this.state.userInput);
+    // console.log('user input:', this.state.userInput);
     e.preventDefault();
     this.getMovies();
   };
@@ -108,15 +107,6 @@ class App extends Component {
     });
   };
 
-  // onKeyDown = (e) => {
-  //   if (e.keyCode === 8) {
-  //     this.setState({
-  //       requestStatus: 'pending',
-  //     });
-  //   }
-  // }
-  
-
   render() {
     const nonimatedMoviesIds = this.state.nominatedMovies.map(
       (nominatedMovie) => nominatedMovie.imdbID
@@ -126,9 +116,7 @@ class App extends Component {
     const moviePoster = (imgUrl) => {
       return imgUrl === 'N/A' ? noPoster : imgUrl;
     };
-
-    console.log('MOVIES', this.state.movies)
-
+    
     return (
       <div className="App">
         <h1>The Shoppies</h1>
@@ -136,10 +124,9 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           userInput={this.state.userInput}
-          // onKeyDown={this.onKeyDown}
         />
         {this.state.requestStatus === 'failure' && (
-          <NoResults userInput={this.state.userInput} />
+          <NoResults searchedInput={this.state.searchedInput} />
         )}
         {this.state.requestStatus === 'pending' && (
           <p>Please begin your search</p>
@@ -163,4 +150,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
