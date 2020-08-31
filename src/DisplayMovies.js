@@ -6,15 +6,16 @@ const DisplayMovies = (props) => {
     <div>
       <h2>Movies Searches:</h2>
       <ul>
-        {props.movies.map(({ Title, Year, imdbID }) => {
+        {props.movies.map(({ Title, Year, imdbID, Poster }) => {
           return (
             <li key={imdbID}>
+              <img src={props.moviePoster(Poster)} alt="Poster of movie" />
               <h2>{Title}</h2>
               <p>{Year}</p>
               <NominateBtn
                 text="Nominate"
-                nominateBtn={props.nominateBtn}
-                nonimatedMoviesID={props.nonimatedMoviesID.includes(imdbID)}
+                nominateMovie={props.nominateMovie}
+                nonimatedMoviesIds={props.nonimatedMoviesIds.includes(imdbID)}
                 movieId={imdbID}
                 movieTitle={Title}
                 movieYear={Year}
