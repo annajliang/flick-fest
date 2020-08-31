@@ -8,6 +8,7 @@ const SearchMovie = (props) => {
         id="searchMovie"
         name="searchMovie"
         onChange={props.handleChange}
+        // onKeyDown={props.onKeyDown}
         value={props.userInput}
         placeholder="Enter your movie"
         required

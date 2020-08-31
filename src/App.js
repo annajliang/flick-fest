@@ -14,6 +14,7 @@ class App extends Component {
       userInput: '',
       movies: [],
       nominatedMovies: [],
+      requestStatus: 'pending',
     };
   }
 
@@ -41,11 +42,13 @@ class App extends Component {
       );
       this.setState({
         movies: moviesOnly,
+        requestStatus: 'success',
       });
     } catch (err) {
       console.log('err');
       this.setState({
         movies: [],
+        requestStatus: 'failure',
       });
     }
   };
@@ -105,6 +108,15 @@ class App extends Component {
     });
   };
 
+  // onKeyDown = (e) => {
+  //   if (e.keyCode === 8) {
+  //     this.setState({
+  //       requestStatus: 'pending',
+  //     });
+  //   }
+  // }
+  
+
   render() {
     const nonimatedMoviesIds = this.state.nominatedMovies.map(
       (nominatedMovie) => nominatedMovie.imdbID
@@ -124,16 +136,21 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           userInput={this.state.userInput}
+          // onKeyDown={this.onKeyDown}
         />
-        {this.state.movies.length === 0 && this.state.userInput !== '' ? (
+        {this.state.requestStatus === 'failure' && (
           <NoResults userInput={this.state.userInput} />
-        ) : (
+        )}
+        {this.state.requestStatus === 'pending' && (
+          <p>Please begin your search</p>
+        )}
+        {this.state.requestStatus === 'success' && (
           <DisplayMovies
-            movies={this.state.movies}
-            nonimatedMoviesIds={nonimatedMoviesIds}
-            nominateMovie={this.nominateMovie}
-            moviePoster={moviePoster}
-          />
+              movies={this.state.movies}
+              nonimatedMoviesIds={nonimatedMoviesIds}
+              nominateMovie={this.nominateMovie}
+              moviePoster={moviePoster}
+            />
         )}
         <NominatedMovies
           movies={this.state.movies}
