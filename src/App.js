@@ -108,7 +108,9 @@ class App extends Component {
   };
 
   render() {
-    const nonimatedMoviesIds = this.state.nominatedMovies.map(
+    const { searchedInput, movies, nominatedMovies } = this.state;
+
+    const nonimatedMoviesIds = nominatedMovies.map(
       (nominatedMovie) => nominatedMovie.imdbID
     );
 
@@ -126,22 +128,22 @@ class App extends Component {
           // userInput={this.state.userInput}
         />
         {this.state.requestStatus === 'failure' && (
-          <NoResults searchedInput={this.state.searchedInput} />
+          <NoResults searchedInput={searchedInput} />
         )}
         {this.state.requestStatus === 'ready' && (
           <p>Please begin your search</p>
         )}
         {this.state.requestStatus === 'success' && (
           <DisplayMovies
-              movies={this.state.movies}
+              movies={movies}
               nonimatedMoviesIds={nonimatedMoviesIds}
               nominateMovie={this.nominateMovie}
               moviePoster={moviePoster}
             />
         )}
         <NominatedMovies
-          movies={this.state.movies}
-          nominatedMovies={this.state.nominatedMovies}
+          movies={movies}
+          nominatedMovies={nominatedMovies}
           removeMovie={this.removeMovie}
           moviePoster={moviePoster}
         />

@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const RemoveBtn = (props) => {
+const RemoveBtn = ({ removeMovie, movieId, text }) => {
   return (
     <button
-      onClick={() => props.removeMovie(props.movieId)}
-      id={props.movieId}
-    //   disabled={props.nonimatedMoviesID}
+      onClick={() => removeMovie(movieId)}
+      id={movieId}
     >
-      {props.text}
+      {text}
     </button>
   );
 }

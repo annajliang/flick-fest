@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const SearchMovie = (props) => {
+const SearchMovie = ({ handleSubmit, handleChange }) => {
   return (
-    <form action="input" onSubmit={props.handleSubmit}>
+    <form action="input" onSubmit={handleSubmit}>
       <input
         type="search"
         id="searchMovie"
         name="searchMovie"
-        onChange={props.handleChange}
-        // onKeyDown={props.onKeyDown}
-        // value={props.userInput}
+        onChange={handleChange}
         placeholder="Enter your movie"
         required
       />
