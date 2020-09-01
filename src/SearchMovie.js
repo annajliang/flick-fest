@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const SearchMovie = (props) => {
   return (
@@ -9,7 +10,7 @@ const SearchMovie = (props) => {
         name="searchMovie"
         onChange={props.handleChange}
         // onKeyDown={props.onKeyDown}
-        value={props.userInput}
+        // value={props.userInput}
         placeholder="Enter your movie"
         required
       />
@@ -17,5 +18,10 @@ const SearchMovie = (props) => {
     </form>
   );
 };
+
+SearchMovie.propTypes = {
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
+}
 
 export default SearchMovie;

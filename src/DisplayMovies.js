@@ -1,5 +1,6 @@
 import React from "react";
 import NominateBtn from "./NominateBtn";
+import PropTypes from 'prop-types';
 
 const DisplayMovies = (props) => {
   return (
@@ -26,6 +27,12 @@ const DisplayMovies = (props) => {
       </ul>
     </div>
     );
+}
+
+DisplayMovies.propTypes = {
+  moviePoster: PropTypes.func,
+  nominateMovie: PropTypes.func,
+  nonimatedMoviesIds: PropTypes.array,
 }
 
 export default DisplayMovies;

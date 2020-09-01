@@ -1,5 +1,6 @@
 import React from "react";
 import RemoveBtn from "./RemoveBtn";
+import PropTypes from 'prop-types';
 
 const NominatedMovies = (props) => {
   return (
@@ -23,6 +24,11 @@ const NominatedMovies = (props) => {
       </ul>
     </div>
     );
+}
+
+NominatedMovies.propTypes = {
+  moviePoster: PropTypes.func,
+  removeMovie: PropTypes.func,
 }
 
 export default NominatedMovies;

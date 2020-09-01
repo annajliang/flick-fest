@@ -123,7 +123,7 @@ class App extends Component {
         <SearchMovie
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
-          userInput={this.state.userInput}
+          // userInput={this.state.userInput}
         />
         {this.state.requestStatus === 'failure' && (
           <NoResults searchedInput={this.state.searchedInput} />

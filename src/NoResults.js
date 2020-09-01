@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const NoResults = ({ searchedInput }) => {
   return (
@@ -8,5 +9,9 @@ const NoResults = ({ searchedInput }) => {
     </div>
   );
 };
+
+NoResults.propTypes = {
+  searchedInput: PropTypes.string,
+}
 
 export default NoResults;
