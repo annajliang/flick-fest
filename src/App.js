@@ -71,7 +71,7 @@ const App = () => {
     setUserInput(e.target.value);
   };
 
-  const nonimatedMoviesIds = nominatedMovies.map(nominatedMovie => nominatedMovie.imdbID);
+  const nominatedMoviesIds = nominatedMovies.map(nominatedMovie => nominatedMovie.imdbID);
 
   // add 'no poster available' image if movie poster is not available
   const moviePoster = (imgUrl) => {
@@ -89,7 +89,7 @@ const App = () => {
       {requestStatus === "success" && (
         <DisplayMovies
           movies={movies}
-          nonimatedMoviesIds={nonimatedMoviesIds}
+          nominatedMoviesIds={nominatedMoviesIds}
           nominateMovie={nominateMovie}
           moviePoster={moviePoster}
         />

@@ -16,7 +16,7 @@ const DisplayMovies = (props) => {
               <NominateBtn
                 text="Nominate"
                 nominateMovie={props.nominateMovie}
-                nonimatedMoviesIds={props.nonimatedMoviesIds.includes(imdbID)}
+                isDisabled={props.nominatedMoviesIds.includes(imdbID)}
                 movieId={imdbID}
                 movieTitle={Title}
                 movieYear={Year}
@@ -33,7 +33,7 @@ DisplayMovies.propTypes = {
   movies: PropTypes.array.isRequired,
   moviePoster: PropTypes.func,
   nominateMovie: PropTypes.func,
-  nonimatedMoviesIds: PropTypes.array,
+  nominatedMoviesIds: PropTypes.array,
 }
 
 export default DisplayMovies;

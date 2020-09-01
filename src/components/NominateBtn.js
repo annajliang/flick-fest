@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const NominateBtn = ({ nominateMovie, movieId, nonimatedMoviesIds, text }) => {
+const NominateBtn = ({ nominateMovie, movieId, isDisabled, text }) => {
   return (
     <button
       onClick={() => nominateMovie(movieId)}
       id={movieId}
-      disabled={nonimatedMoviesIds}
+      disabled={isDisabled}
     >
       {text}
     </button>
@@ -16,7 +16,7 @@ const NominateBtn = ({ nominateMovie, movieId, nonimatedMoviesIds, text }) => {
 NominateBtn.propTypes = {
   nominateMovie: PropTypes.func,
   movieId: PropTypes.string,
-  nonimatedMoviesIds: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   text: PropTypes.string,
 }
 
