@@ -30,6 +30,7 @@ const DisplayMovies = (props) => {
 }
 
 DisplayMovies.propTypes = {
+  movies: PropTypes.array.isRequired,
   moviePoster: PropTypes.func,
   nominateMovie: PropTypes.func,
   nonimatedMoviesIds: PropTypes.array,
