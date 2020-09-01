@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const NominateBtn = (props) => {
+const NominateBtn = ({ nominateMovie, movieId, nonimatedMoviesIds, text }) => {
   return (
     <button
-      onClick={() => props.nominateMovie(props.movieId)}
-      id={props.movieId}
-      disabled={props.nonimatedMoviesIds}
+      onClick={() => nominateMovie(movieId)}
+      id={movieId}
+      disabled={nonimatedMoviesIds}
     >
-      {props.text}
+      {text}
     </button>
   );
 }
