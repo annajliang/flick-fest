@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import SearchMovie from "./SearchMovie";
-import DisplayMovies from "./DisplayMovies";
-import NominatedMovies from "./NominatedMovies";
-import NoResults from "./NoResults";
+import SearchMovie from "./components/SearchMovie";
+import DisplayMovies from "./components/DisplayMovies";
+import NominatedMovies from "./components/NominatedMovies";
+import NoResults from "./components/NoResults";
 import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
