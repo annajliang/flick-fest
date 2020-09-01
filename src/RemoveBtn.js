@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-function RemoveBtn(props) {
+const RemoveBtn = (props) => {
   return (
     <button
       onClick={() => props.removeMovie(props.movieId)}

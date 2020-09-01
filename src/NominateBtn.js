@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-function NominateBtn(props) {
+const NominateBtn = (props) => {
   return (
     <button
       onClick={() => props.nominateMovie(props.movieId)}
