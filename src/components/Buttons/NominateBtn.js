@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const NominateBtn = ({ nominateMovie, movieId, isDisabled, text }) => {
   return (
     <button
-      data-testid="nominateBtn"
       onClick={() => nominateMovie(movieId)}
       id={movieId}
       disabled={isDisabled}
