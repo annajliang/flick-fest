@@ -15,7 +15,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
                 name="searchMovie"
                 onChange={handleChange}
                 value={userInput}
-                placeholder="Please enter your movie..."
+                placeholder="Enter the movie you wish to nominate..."
                 required
               />
               <input type="submit" />

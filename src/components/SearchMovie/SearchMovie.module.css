@@ -3,7 +3,7 @@
 } */
 
 .container {
-    margin-top: -18px;
+    margin-top: -19.5px;
 }
 
 .searchMovieHeader {
@@ -50,10 +50,12 @@
 form {
     position: relative;
     z-index: 4;
+    display: inline-block;
 }
 
 input {
     border: none;
+    /* border-radius: 5px; */
 }
 
 input[type="search"] {
@@ -74,3 +76,13 @@ input[type="search"] {
     padding: 3rem 4rem;
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 } */
+
+input[type="submit"] {
+    background-color: #3fd0d4;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 9rem;
+    cursor: pointer;
+    /* border: 5px solid #fff; */
+}
