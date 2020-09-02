@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SearchMovie from "./components/SearchMovie";
-import DisplayMovies from "./components/DisplayMovies";
-import NominatedMovies from "./components/NominatedMovies";
-import NoResults from "./components/NoResults";
+import SearchMovie from "./components/SearchMovie/SearchMovie";
+import DisplayMovies from "./components/Results/DisplayMovies";
+import NominatedMovies from "./components/Results/NominatedMovies";
+import NoResults from "./components/Results/NoResults";
 import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
