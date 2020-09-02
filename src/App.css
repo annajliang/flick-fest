@@ -42,7 +42,7 @@ ol, ul {
 }
 
 .wrapper {
-  width: 85;
+  width: 85%;
   margin: 0 auto;
   max-width: 1200px;
   text-align: center;
