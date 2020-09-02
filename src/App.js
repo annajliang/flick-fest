@@ -89,7 +89,7 @@ const App = () => {
       {requestStatus === "success" && (
         <DisplayMovies
           movies={movies}
-          nonimatedMoviesIds={nominatedMoviesIds}
+          nominatedMoviesIds={nominatedMoviesIds}
           nominateMovie={nominateMovie}
           moviePoster={moviePoster}
         />
