@@ -89,25 +89,29 @@ const App = () => {
         <SearchMovie 
             handleSubmit={handleSubmit} 
             handleChange={handleChange} 
+            requestStatus={requestStatus}
+            searchedInput={searchedInput}
             userInput={userInput} />
-        {requestStatus === "failure" && (
-          <NoResults searchedInput={searchedInput} />
-        )}
-        {requestStatus === "ready" && <p>Please begin your search</p>}
-        {requestStatus === "success" && (
-          <DisplayMovies
+        <div className="wrapper">
+          {/* {requestStatus === "failure" && (
+            <NoResults searchedInput={searchedInput} />
+          )} */}
+          {requestStatus === "ready" && <p>Please begin your search</p>}
+          {requestStatus === "success" && (
+            <DisplayMovies
+              movies={movies}
+              nominatedMoviesIds={nominatedMoviesIds}
+              nominateMovie={nominateMovie}
+              moviePoster={moviePoster}
+            />
+          )}
+          <NominatedMovies
             movies={movies}
-            nominatedMoviesIds={nominatedMoviesIds}
-            nominateMovie={nominateMovie}
+            nominatedMovies={nominatedMovies}
+            removeMovie={removeMovie}
             moviePoster={moviePoster}
           />
-        )}
-        <NominatedMovies
-          movies={movies}
-          nominatedMovies={nominatedMovies}
-          removeMovie={removeMovie}
-          moviePoster={moviePoster}
-        />
+        </div>
       </main>
     </div>
   );
