@@ -79,7 +79,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="wrapper">
       <h1>The Shoppies</h1>
       <SearchMovie 
           handleSubmit={handleSubmit} 
