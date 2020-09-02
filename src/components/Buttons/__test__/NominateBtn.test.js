@@ -1,11 +1,11 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import NominateBtn from '../NominateBtn';
 
-afterEach(cleanup);
 
-it('should be enabled', () => {
-    const { getByTestId } = render(<NominateBtn />);
-    fireEvent.click(getByTestId('nominateBtn'))
-    expect(getByTestId('nominateBtn')).not.toHaveAttribute('disabled')
-});
+// UNIT TESTING
+it('nominateBtn disabled if isDisabled is true', () => {
+    render(<NominateBtn nominateMovie={() => {}} movieId="movieId" isDisabled={true} text="text"/>);
+    screen.debug();
+    expect(screen.getByRole('button')).toBeDisabled();
+})
