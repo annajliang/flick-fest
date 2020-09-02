@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SearchMovie.module.css";
 
 const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
@@ -18,7 +20,9 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
                 placeholder="Enter the movie you wish to nominate..."
                 required
               />
-              <input type="submit" />
+              <button type="submit">
+                  <FontAwesomeIcon icon={faSearch} />
+              </button>
             </form>
         </div>
       </div>

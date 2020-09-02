@@ -53,9 +53,9 @@ form {
     display: inline-block;
 }
 
-input {
+input, button {
     border: none;
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 
 input[type="search"] {
@@ -77,12 +77,14 @@ input[type="search"] {
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 } */
 
-input[type="submit"] {
+button {
     background-color: #3fd0d4;
     position: absolute;
     right: 0;
     height: 100%;
     width: 9rem;
     cursor: pointer;
-    /* border: 5px solid #fff; */
+    font-size: 3rem;
+    color: #fff;
+    border: 5px solid #fff;
 }
