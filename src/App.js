@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SearchMovie from "./components/SearchMovie";
-import DisplayMovies from "./components/DisplayMovies";
-import NominatedMovies from "./components/NominatedMovies";
-import NoResults from "./components/NoResults";
+import SearchMovie from "./components/SearchMovie/SearchMovie";
+import DisplayMovies from "./components/Results/DisplayMovies";
+import NominatedMovies from "./components/Results/NominatedMovies";
+import NoResults from "./components/Results/NoResults";
 import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
@@ -26,10 +26,10 @@ const App = () => {
       setMovies(moviesOnly);
       setRequestStatus("success");
     } catch (err) {
-      console.log(err);
-      setMovies([]);
-      setRequestStatus("failure");
-      setSearchedInput(userInput);
+        console.log(err);
+        setMovies([]);
+        setRequestStatus("failure");
+        setSearchedInput(userInput);
     }
   };
 
@@ -81,7 +81,10 @@ const App = () => {
   return (
     <div className="App">
       <h1>The Shoppies</h1>
-      <SearchMovie handleSubmit={handleSubmit} handleChange={handleChange} />
+      <SearchMovie 
+          handleSubmit={handleSubmit} 
+          handleChange={handleChange} 
+          userInput={userInput} />
       {requestStatus === "failure" && (
         <NoResults searchedInput={searchedInput} />
       )}

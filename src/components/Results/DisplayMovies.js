@@ -1,5 +1,5 @@
 import React from "react";
-import NominateBtn from "./NominateBtn";
+import NominateBtn from "../Buttons/NominateBtn";
 import PropTypes from 'prop-types';
 
 const DisplayMovies = (props) => {

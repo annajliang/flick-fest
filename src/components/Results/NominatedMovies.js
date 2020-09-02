@@ -1,5 +1,5 @@
 import React from "react";
-import RemoveBtn from "./RemoveBtn";
+import RemoveBtn from "../Buttons/RemoveBtn";
 import PropTypes from 'prop-types';
 
 const NominatedMovies = (props) => {
