@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Navbar from "./components/Navbar/Navbar";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import DisplayMovies from "./components/Results/DisplayMovies";
 import NominatedMovies from "./components/Results/NominatedMovies";
@@ -79,30 +80,35 @@ const App = () => {
   };
 
   return (
-    <div className="wrapper">
-      <h1>The Shoppies</h1>
-      <SearchMovie 
-          handleSubmit={handleSubmit} 
-          handleChange={handleChange} 
-          userInput={userInput} />
-      {requestStatus === "failure" && (
-        <NoResults searchedInput={searchedInput} />
-      )}
-      {requestStatus === "ready" && <p>Please begin your search</p>}
-      {requestStatus === "success" && (
-        <DisplayMovies
+    <div>
+      <header>
+        <Navbar />
+      </header>
+      <main className="wrapper">
+        {/* <h1>The Shoppies</h1> */}
+        <SearchMovie 
+            handleSubmit={handleSubmit} 
+            handleChange={handleChange} 
+            userInput={userInput} />
+        {requestStatus === "failure" && (
+          <NoResults searchedInput={searchedInput} />
+        )}
+        {requestStatus === "ready" && <p>Please begin your search</p>}
+        {requestStatus === "success" && (
+          <DisplayMovies
+            movies={movies}
+            nominatedMoviesIds={nominatedMoviesIds}
+            nominateMovie={nominateMovie}
+            moviePoster={moviePoster}
+          />
+        )}
+        <NominatedMovies
           movies={movies}
-          nominatedMoviesIds={nominatedMoviesIds}
-          nominateMovie={nominateMovie}
+          nominatedMovies={nominatedMovies}
+          removeMovie={removeMovie}
           moviePoster={moviePoster}
         />
-      )}
-      <NominatedMovies
-        movies={movies}
-        nominatedMovies={nominatedMovies}
-        removeMovie={removeMovie}
-        moviePoster={moviePoster}
-      />
+      </main>
     </div>
   );
 };
