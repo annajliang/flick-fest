@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header/Header";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import DisplayMovies from "./components/Results/DisplayMovies";
 import NominatedMovies from "./components/Results/NominatedMovies";
@@ -82,9 +82,9 @@ const App = () => {
   return (
     <div>
       <header>
-        <Navbar />
+        <Header />
       </header>
-      <main className="wrapper">
+      <main>
         {/* <h1>The Shoppies</h1> */}
         <SearchMovie 
             handleSubmit={handleSubmit} 
