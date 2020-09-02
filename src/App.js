@@ -81,7 +81,10 @@ const App = () => {
   return (
     <div className="App">
       <h1>The Shoppies</h1>
-      <SearchMovie handleSubmit={handleSubmit} handleChange={handleChange} />
+      <SearchMovie 
+          handleSubmit={handleSubmit} 
+          handleChange={handleChange} 
+          userInput={userInput} />
       {requestStatus === "failure" && (
         <NoResults searchedInput={searchedInput} />
       )}

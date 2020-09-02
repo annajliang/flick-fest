@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const SearchMovie = ({ handleSubmit, handleChange }) => {
+const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
   return (
     <form action="input" onSubmit={handleSubmit}>
       <input
@@ -9,6 +9,7 @@ const SearchMovie = ({ handleSubmit, handleChange }) => {
         id="searchMovie"
         name="searchMovie"
         onChange={handleChange}
+        value={userInput}
         placeholder="Enter your movie"
         required
       />
