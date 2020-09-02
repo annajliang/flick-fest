@@ -7,7 +7,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
     <div className={styles.container}>
       <h2 className={styles.searchMovieHeader}>Search Movie</h2>
       <div className={styles.backgroundPattern}>
-        <form action="input" onSubmit={handleSubmit} className="wrapper">
+        <form action="input" onSubmit={handleSubmit}>
           <input
             type="search"
             id="searchMovie"
