@@ -26,10 +26,10 @@ const App = () => {
       setMovies(moviesOnly);
       setRequestStatus("success");
     } catch (err) {
-      console.log(err);
-      setMovies([]);
-      setRequestStatus("failure");
-      setSearchedInput(userInput);
+        console.log(err);
+        setMovies([]);
+        setRequestStatus("failure");
+        setSearchedInput(userInput);
     }
   };
 
