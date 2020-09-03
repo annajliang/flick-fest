@@ -53,7 +53,7 @@ form {
     display: inline-block;
 }
 
-input, button {
+input, .searchBtn {
     border: none;
     border-radius: 5px;
 }
@@ -76,7 +76,7 @@ input[type="search"] {
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
-button {
+.searchBtn {
     background-color: #3fd0d4;
     position: absolute;
     right: 0;

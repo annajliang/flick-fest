@@ -21,7 +21,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
                 placeholder="Enter the movie you wish to nominate..."
                 required
               />
-              <button type="submit">
+              <button type="submit" className={styles.searchBtn}>
                   <FontAwesomeIcon icon={faSearch} />
               </button>
             </form>
