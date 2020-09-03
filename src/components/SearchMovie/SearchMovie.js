@@ -20,7 +20,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
                 name="searchMovie"
                 onChange={handleChange}
                 value={userInput}
-                placeholder="Enter the movie you wish to nominate..."
+                placeholder="Enter the movie you wish to search..."
                 required
               />
               <button type="submit" className={styles.searchBtn}>

@@ -50,6 +50,7 @@ input[type="search"] {
     font-size: 2rem;
     border: 3px solid #3fd0d4;
     /* margin-top: 11rem; */
+    font-family: 'Montserrat', sans-serif;;
 }
 
 .searchArea {
