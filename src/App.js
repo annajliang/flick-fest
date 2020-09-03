@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import DisplayMovies from "./components/Results/DisplayMovies";
 import NominatedMovies from "./components/Results/NominatedMovies";
-import NoResults from "./components/Results/NoResults";
 import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
