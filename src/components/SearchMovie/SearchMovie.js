@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import Instructions from "../Instructions/Instructions";
 import NoResults from "../Results/NoResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
