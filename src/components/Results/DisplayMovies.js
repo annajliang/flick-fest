@@ -14,7 +14,7 @@ const DisplayMovies = (props) => {
         <ul className="gridContainer">
           {props.movies.map(({ Title, Year, imdbID, Poster }) => {
             return (
-              <li key={imdbID} className="movieCard">
+              <li key={imdbID} className={`movieCard ${props.nominatedMoviesIds.includes(imdbID) ? "clickedMovieCard" : ""}`}>
                 <div className="movieCardThumbnail">
                   <img src={props.moviePoster(Poster)} alt="Poster of movie" className="posterSize" />
                 </div>
