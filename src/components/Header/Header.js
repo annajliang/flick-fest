@@ -1,6 +1,6 @@
 import React from "react";
 // import Navbar from "../Navbar/Navbar";
-import divider from "../../assets/icon-wave-news.svg";
+import divider from "../../assets/headerDivider.svg";
 import styles from "./Header.module.css";
 
 const Header = () => {
