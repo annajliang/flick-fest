@@ -39,8 +39,6 @@ const App = () => {
 
     if (nominatedMovies.length < 5) {
       setNominatedMovies([...nominatedMovies, clickedMovie]);
-    } else {
-      alert("you cannot nominate anymore movies");
     }
   };
 
@@ -81,7 +79,7 @@ const App = () => {
 
   return (
     <div>
-      <Banner />
+      {nominatedMovies.length === 5 && <Banner />}
       <header>
         <Header />
       </header>
