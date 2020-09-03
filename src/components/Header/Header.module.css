@@ -75,6 +75,6 @@ header {
     stroke-linejoin: round;
 } */
 
-span[role="img"] {
+.emoji {
     font-size: 3rem;
 }

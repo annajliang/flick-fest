@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import DisplayMovies from "./components/Results/DisplayMovies";
@@ -38,8 +39,6 @@ const App = () => {
 
     if (nominatedMovies.length < 5) {
       setNominatedMovies([...nominatedMovies, clickedMovie]);
-    } else {
-      alert("you cannot nominate anymore movies");
     }
   };
 
@@ -80,6 +79,7 @@ const App = () => {
 
   return (
     <div>
+      {nominatedMovies.length === 5 && <Banner />}
       <header>
         <Header />
       </header>
