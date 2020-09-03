@@ -5,7 +5,7 @@ import "./results.css";
 
 const NominatedMovies = (props) => {
   return (
-    <div>
+    <section>
       <h2>Nominated Movies:</h2>
       <ul className="gridContainer">
         {props.nominatedMovies.map(({ Title, Year, imdbID, Poster }) => {
@@ -23,7 +23,7 @@ const NominatedMovies = (props) => {
           );
         })}
       </ul>
-    </div>
+    </section>
     );
 }
 
