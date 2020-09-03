@@ -10,15 +10,21 @@ const NominatedMovies = (props) => {
       <ul className="gridContainer">
         {props.nominatedMovies.map(({ Title, Year, imdbID, Poster }) => {
           return (
-            <li key={imdbID}>
-              <img src={props.moviePoster(Poster)} alt="Poster of movie" className="posterSize" />
-              <h2>{Title}</h2>
-              <p>{Year}</p>
-              <RemoveBtn
-                text="Remove"
-                removeMovie={props.removeMovie}
-                movieId={imdbID}
-              />
+            <li key={imdbID} className="movieCard">
+              <div className="movieCardThumbnail">
+                <img src={props.moviePoster(Poster)} alt="Poster of movie" className="posterSize" />
+              </div>
+              <div className="movieCardContent">
+                <div className="movieTitle">
+                  <h3>{Title}</h3>
+                </div>
+                <p className="movieYear">{Year}</p>
+                <RemoveBtn
+                  text="Remove"
+                  removeMovie={props.removeMovie}
+                  movieId={imdbID}
+                />
+              </div>
             </li>
           );
         })}
