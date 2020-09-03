@@ -1,0 +1,46 @@
+.instructionsList {
+    display: flex;
+    margin: 1rem 0 1.5rem;
+}
+
+.instructionsList span {
+    font-family: 'Rozha One', serif;
+    font-size: 8rem;
+    color: #ff685d;
+    margin-right: 1rem;
+}
+
+.instructionsList p {
+    font-size: 1.4rem;
+}
+
+.instructionsItem {
+   display: flex;
+   align-items: center;
+   margin-right: 1.6rem;
+}
+
+.verticalDivider {
+    position: relative;
+}
+
+.verticalDivider::after {
+    width: 80px;
+    height: 4px;
+    top: 3.4rem;
+    right: -3.9rem;
+    position: absolute;
+    content: "";
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M8 2c2.667 2 5.333 2 8 0M0 2c2.667-2 5.333-2 8 0' stroke='%233e4855' stroke-width='.5' fill='transparent'/%3E%3C/svg%3E");
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.stepOne p {
+    width: 10rem;
+}
+
+ul .instructionsItem:last-child::after {
+    content: '';
+
+}

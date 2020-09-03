@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import Instructions from "../Instructions/Instructions";
 import NoResults from "../Results/NoResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +12,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
       <div className={styles.backgroundPattern}>
         <div className={`wrapper ${styles.searchArea}`}>
           <h2 className={styles.searchMovieHeader}>Search Movie</h2>
+            <Instructions />
             <form action="input" onSubmit={handleSubmit}>
               <input
                 type="search"
