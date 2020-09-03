@@ -4,6 +4,9 @@
     grid-gap: 30px;
     justify-items: center;
     margin-top: 4rem;
+    background-image: url("../../assets/resultWaves.svg");
+    background-size: 21rem;
+    padding: 2rem;
 }
 
 .posterSize {

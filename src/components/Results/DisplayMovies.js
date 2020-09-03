@@ -3,14 +3,14 @@ import NominateBtn from "../Buttons/NominateBtn";
 import PropTypes from 'prop-types';
 import styles from "./DisplayMovies.module.css";
 import "./results.css";
-import divider from "../../assets/resultsDivider.svg";
+// import divider from "../../assets/resultsDivider.svg";
 
 const DisplayMovies = (props) => {
   return (
     <section className={styles.container}>
       <div className="wrapper">
-        <h2>Pick Your 5 Faves!</h2>
-        <img src={divider} alt="" className={styles.divider} />
+        <h2 className={styles.divider}>Pick Your 5 Faves!</h2>
+        {/* <img src={divider} alt="" className={styles.divider} /> */}
         <ul className="gridContainer">
           {props.movies.map(({ Title, Year, imdbID, Poster }) => {
             return (
