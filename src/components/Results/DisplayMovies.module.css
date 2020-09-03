@@ -1,0 +1,32 @@
+.container {
+    padding: 9rem 0;
+    background-color: #F1FAFD;
+}
+
+.container h2 {
+    font-size: 7rem;
+    color: #6258ff;
+       text-shadow: 6px 6px #bae3ff;
+       -webkit-text-fill-color: #383435;
+       -webkit-text-stroke-width: 2px;
+       /* -webkit-text-stroke-color: #fff; */
+    
+}
+
+.divider {
+    position: relative;
+}
+
+.divider::before {
+     width: 100%;
+     height: 4px;
+     bottom: 0;
+     left: 0;
+     top: 7rem;
+     position: absolute;
+     content: "";
+     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='4'%3E%3Cpath d='M10 2c3.333 2 6.667 2 10 0M0 2c3.333-2 6.667-2 10 0' stroke='%2368ebca' fill='transparent'/%3E%3C/svg%3E");
+     background-repeat: repeat;
+     -webkit-transform: rotate(0deg);
+     transform: rotate(0deg);
+}

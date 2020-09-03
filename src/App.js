@@ -92,7 +92,6 @@ const App = () => {
             requestStatus={requestStatus}
             searchedInput={searchedInput}
             userInput={userInput} />
-        <div className="wrapper">
           {/* {requestStatus === "failure" && (
             <NoResults searchedInput={searchedInput} />
           )} */}
@@ -111,7 +110,6 @@ const App = () => {
             removeMovie={removeMovie}
             moviePoster={moviePoster}
           />
-        </div>
       </main>
     </div>
   );

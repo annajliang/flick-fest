@@ -76,7 +76,7 @@ header::before {
     z-index: -1;
 } */
 
-img {
+.divider {
     width: 30rem;
     position: relative;
     z-index: -1;
