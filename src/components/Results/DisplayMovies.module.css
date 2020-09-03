@@ -5,11 +5,15 @@
 
 .container h2 {
     font-size: 7rem;
-    color: #6258ff;
+    /* color: #6258ff;
     text-shadow: 6px 6px #bae3ff;
     -webkit-text-fill-color: #383435;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 2px; */
     /* -webkit-text-stroke-color: #fff; */
+    text-shadow: 6px 6px #3fcfd4a2;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #383435;
     
 }
 
