@@ -19,7 +19,7 @@ const Header = () => {
                   <p className={styles.textMargin}>Once you are satisfied with your selections, click submit to send us your votes.</p>
       
                   <p>This poll has unlimited voting, so you can vote as many times as you wish for your fave choices! We will close this poll and announce the results on September 8 at 9 a.m. ET. so get your votes in asap!</p>
-                  <p className={styles.voteNow}>Vote below! <span role="img" aria-label="Backhand Index Pointing Down">👇</span></p>
+                  <p className={styles.voteNow}>Vote below! <span role="img" aria-label="Backhand Index Pointing Down" className={styles.emoji}>👇</span></p>
               </div>
             </div>
           </div>
