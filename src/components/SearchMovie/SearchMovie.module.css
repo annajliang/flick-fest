@@ -10,7 +10,7 @@
     font-size: 7rem;
     color: #2b3c6b;
     text-align: left;
-    top: 2rem;
+    top: 0;
     position: relative;
     z-index: 5;
     /* left: 5rem; */
@@ -55,25 +55,28 @@ form {
 
 input, .searchBtn {
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 input[type="search"] {
     width: 65rem;
     height: 7rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     /* margin-left: 15rem; */
     padding: 0 2rem;
     font-size: 2rem;
+    border: 3px solid #3fd0d4;
     /* margin-top: 11rem; */
 }
 
 .searchArea {
-    background-color: rgba(236, 236, 236, 0.9);
+    /* background-color: rgba(236, 236, 236, 0.9); */
     position: relative;
+    border: 5px solid rgb(62, 72, 85);
     z-index: 1;
     padding: 3rem 4rem;
-    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+    background-color: #fff;
+    /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
 }
 
 .searchBtn {
@@ -85,5 +88,5 @@ input[type="search"] {
     cursor: pointer;
     font-size: 3rem;
     color: #fff;
-    border: 5px solid #fff;
+    /* border: 5px solid #fff; */
 }
