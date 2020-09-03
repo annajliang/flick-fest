@@ -1,6 +1,6 @@
 import React from "react";
 // import Navbar from "../Navbar/Navbar";
-import divider from "../../assets/icon-wave-news.svg";
+import divider from "../../assets/headerDivider.svg";
 import styles from "./Header.module.css";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
           <div className='wrapper'>
             <div className={styles.title}>
               <h1>The Shoppies</h1>
-              <img src={divider} alt=""/>
+              <img src={divider} alt="" className={styles.divider} />
               <div className={styles.instructions}>
                   <p className={styles.textMargin}>Welcome to Shopify's 1st ever virtual movie awards.</p>
                   <p className={styles.textMargin}> We want to know which movies are the ultimate fan favorite films of all time so we'll need some help from you, the fan.</p>

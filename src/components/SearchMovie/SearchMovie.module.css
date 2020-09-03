@@ -1,18 +1,20 @@
-/* .container {
-    margin-top: -200px;
-} */
+.container {
+    margin-top: -20px;
+}
 
 .container {
-    margin-top: -19.5px;
+    position: relative;
+    /* top: -30rem; */
+    /* background-color: transparent; */
 }
 
 .searchMovieHeader {
     font-size: 7rem;
     color: #2b3c6b;
     text-align: left;
-    top: 2rem;
+    top: -80px;
     position: relative;
-    z-index: 5;
+    /* z-index: 5; */
     /* left: 5rem; */
     /* margin: 0 12rem; */
     letter-spacing: -4px;
@@ -22,62 +24,46 @@
     width: 100%;
     height: 40vh;
     background-color: #FFBDBA;
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: center; */
     position: relative;
-    overflow: hidden;
-    /* margin-top: -15rem; */
-    /* border-radius: 2rem; */
-    /* z-index: -1; */
-}
+    background-image: url("../../assets/diagonalWaves.svg");
+    background-size: 21rem;
 
-.backgroundPattern::before {
-    width: 100%;
-    height: 100%;
-    padding: 100vh 100vw;
-    top: -100vh;
-    left: -100vw;
-    position: absolute;
-    content: '';
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='11'%3E%3Cpath d='M60 5.5c20 5.5 40 5.5 60 0M0 5.5C20 0 40 0 60 5.5' stroke='%23fff' stroke-width='1.5' fill='transparent'/%3E%3C/svg%3E");
-    opacity: .5;
-    transform: rotate(45deg);
-    background-repeat: repeat;
-    transition: opacity .3s linear;
 }
 
 form {
     position: relative;
-    z-index: 4;
+    /* z-index: 4; */
     display: inline-block;
 }
 
-input, button {
+input, .searchBtn {
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 input[type="search"] {
     width: 65rem;
     height: 7rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     /* margin-left: 15rem; */
     padding: 0 2rem;
     font-size: 2rem;
+    border: 3px solid #3fd0d4;
     /* margin-top: 11rem; */
-    /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
 }
 
-/* .searchArea {
-    background-color: rgba(236, 236, 236, 0.849);
+.searchArea {
+    /* background-color: rgba(236, 236, 236, 0.9); */
     position: relative;
-    z-index: 1;
+    /* border: 5px solid rgb(62, 72, 85); */
+    /* z-index: 4; */
     padding: 3rem 4rem;
-    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-} */
+    background-color: #fff;
+    /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
+    box-shadow: 16px 16px #3fd0d4;
+}
 
-button {
+.searchBtn {
     background-color: #3fd0d4;
     position: absolute;
     right: 0;
@@ -86,5 +72,5 @@ button {
     cursor: pointer;
     font-size: 3rem;
     color: #fff;
-    border: 5px solid #fff;
+    /* border: 5px solid #fff; */
 }

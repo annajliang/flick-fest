@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import NoResults from "../Results/NoResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SearchMovie.module.css";
 
-const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
+const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, searchedInput }) => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.backgroundPattern}>
         <div className={`wrapper ${styles.searchArea}`}>
           <h2 className={styles.searchMovieHeader}>Search Movie</h2>
@@ -20,13 +21,16 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput }) => {
                 placeholder="Enter the movie you wish to nominate..."
                 required
               />
-              <button type="submit">
+              <button type="submit" className={styles.searchBtn}>
                   <FontAwesomeIcon icon={faSearch} />
               </button>
             </form>
+            {requestStatus === "failure" && (
+            <NoResults searchedInput={searchedInput} />
+             )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

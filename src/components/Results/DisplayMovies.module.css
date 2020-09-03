@@ -1,0 +1,20 @@
+.container {
+    padding: 9rem 0;
+    background-color: #F1FAFD;
+}
+
+.container h2 {
+    font-size: 7rem;
+    color: #6258ff;
+    text-shadow: 6px 6px #bae3ff;
+    -webkit-text-fill-color: #383435;
+    -webkit-text-stroke-width: 2px;
+    /* -webkit-text-stroke-color: #fff; */
+    
+}
+
+.divider {
+    /* position: relative; */
+    width: 40rem;
+}
+
