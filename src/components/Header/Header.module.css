@@ -31,7 +31,7 @@ h1 {
 .instructions {
     margin-top: 3rem;
     color: #1d1d1d;
-    line-height: 1.3;
+    /* line-height: 1.3; */
     width: 60%;
 }
 

@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import styles from "./NoResults.module.css";
 
 const NoResults = ({ searchedInput }) => {
   return (
-    <div>
-      <h3>Sorry, but we couldn't find {searchedInput}.</h3>
-      <p>Please check your spelling or try again!</p>
+    <div className={styles.container}>
+      <h3 className={styles.textMargin}>Sorry, but we couldn't find the {searchedInput}.</h3>
+      <p>Please check your spelling and try again!</p>
     </div>
   );
 };

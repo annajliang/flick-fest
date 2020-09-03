@@ -96,7 +96,7 @@ const App = () => {
           {/* {requestStatus === "failure" && (
             <NoResults searchedInput={searchedInput} />
           )} */}
-          {requestStatus === "ready" && <p>Please begin your search</p>}
+          {/* {requestStatus === "ready" && <p>Please begin your search</p>} */}
           {requestStatus === "success" && (
             <DisplayMovies
               movies={movies}

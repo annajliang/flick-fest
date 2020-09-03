@@ -66,11 +66,10 @@ input[type="search"] {
     padding: 0 2rem;
     font-size: 2rem;
     /* margin-top: 11rem; */
-    /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
 }
 
 .searchArea {
-    background-color: rgba(236, 236, 236, 0.849);
+    background-color: rgba(236, 236, 236, 0.9);
     position: relative;
     z-index: 1;
     padding: 3rem 4rem;
