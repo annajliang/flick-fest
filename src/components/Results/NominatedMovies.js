@@ -6,7 +6,7 @@ import styles from "./NominatedMovies.module.css";
 const NominatedMovies = (props) => {
   return (
     <section className={styles.container}>
-      <h2>Nominees List</h2>
+      <h2 className={styles.divider}>Nominees List</h2>
       <ul className={styles.flexContainer}>
         {props.nominatedMovies.map(({ Title, Year, imdbID, Poster }) => {
           return (

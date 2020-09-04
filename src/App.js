@@ -95,8 +95,7 @@ const App = () => {
 
   return (
     <div>
-      {isSidebarOpened && (
-        <Sidebar>
+        <Sidebar isSidebarOpened={isSidebarOpened}>
           <NominatedMovies
             movies={movies}
             nominatedMovies={nominatedMovies}
@@ -104,7 +103,6 @@ const App = () => {
             moviePoster={moviePoster}
           />
         </Sidebar>
-      )}
       {nominatedMovies.length === 5 && <Banner />}
       <ViewNomineesBtn toggleSidebar={toggleSidebar} />
       <header>
