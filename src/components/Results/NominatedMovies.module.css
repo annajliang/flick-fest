@@ -68,7 +68,7 @@
    width: 50%;
 }
 
-.movieTitle {
+.movieDesc {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.1;
@@ -78,7 +78,7 @@
     /* padding-bottom: 1rem; */
 }
 
-.movieYear {
+.movieDesc p {
     font-size: 1.3rem;
     text-transform: uppercase;
     margin-bottom: 5px;

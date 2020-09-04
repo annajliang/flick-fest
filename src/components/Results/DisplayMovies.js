@@ -18,18 +18,18 @@ const DisplayMovies = (props) => {
                   <img src={props.moviePoster(Poster)} alt="Poster of movie" className="posterSize" />
                 </div>
                 <div className={styles.movieContent}>
-                  <div className={styles.movieTitle}>
-                    <h3>{Title}</h3>
-                  </div>
-                  <p className="movieYear">{Year}</p>
+                  <p>Released in {Year}</p>
+                  <h3>{Title}</h3>
+                </div>
+                <div className={styles.btnContainer}>
                   <NominateBtn
-                    text="Nominate"
-                    nominateMovie={props.nominateMovie}
-                    isDisabled={props.nominatedMoviesIds.includes(imdbID)}
-                    movieId={imdbID}
-                    movieTitle={Title}
-                    movieYear={Year}
-                  />
+                      text="Nominate"
+                      nominateMovie={props.nominateMovie}
+                      isDisabled={props.nominatedMoviesIds.includes(imdbID)}
+                      movieId={imdbID}
+                      movieTitle={Title}
+                      movieYear={Year}
+                    />
                 </div>
               </li>
             );

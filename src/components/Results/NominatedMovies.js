@@ -15,8 +15,8 @@ const NominatedMovies = (props) => {
                 <img src={props.moviePoster(Poster)} alt="Poster of movie" className="posterSize" />
               </div>
               <div className={styles.movieContent}>
-                <div className={styles.movieTitle}>
-                   <p className={styles.movieYear}>Released in {Year}</p>
+                <div className={styles.movieDesc}>
+                  <p className={styles.movieYear}>Released in {Year}</p>
                   <h3>{Title}</h3>
                 </div>
                 <div className={styles.btnContainer}>
