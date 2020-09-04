@@ -67,6 +67,9 @@
     /* height: auto; */
     text-align: center;
     /* position: relative; */
+    /* text-overflow: ellipsis; */
+     overflow: scroll;
+     height: 10rem;
 }
 
 .movieContent *:not(:last-child) {
