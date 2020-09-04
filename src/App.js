@@ -26,19 +26,21 @@ const App = () => {
           s: userInput,
         },
       });
-      const moviesOnly = movieResult.data.Search.filter(movie => movie.Type === "movie");
+      const moviesOnly = movieResult.data.Search.filter(
+        (movie) => movie.Type === "movie"
+      );
       setMovies(moviesOnly);
       setRequestStatus("success");
     } catch (err) {
-        console.log(err);
-        setMovies([]);
-        setRequestStatus("failure");
-        setSearchedInput(userInput);
+      console.log(err);
+      setMovies([]);
+      setRequestStatus("failure");
+      setSearchedInput(userInput);
     }
   };
 
   const nominateMovie = (id) => {
-    const clickedMovie = movies.find(movie => movie.imdbID === id);
+    const clickedMovie = movies.find((movie) => movie.imdbID === id);
 
     if (nominatedMovies.length < 5) {
       setNominatedMovies([...nominatedMovies, clickedMovie]);
@@ -46,14 +48,16 @@ const App = () => {
   };
 
   const removeMovie = (id) => {
-    const newNominatedMovies = nominatedMovies.filter(nominatedMovie => nominatedMovie.imdbID !== id);
+    const newNominatedMovies = nominatedMovies.filter(
+      (nominatedMovie) => nominatedMovie.imdbID !== id
+    );
 
     setNominatedMovies([...newNominatedMovies]);
   };
 
   const toggleSidebar = () => {
     setIsSidebarOpened(!isSidebarOpened);
-  }
+  };
 
   useEffect(() => {
     const savedList = window.localStorage.getItem("savedNominees");
@@ -65,7 +69,10 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("savedNominees", JSON.stringify(nominatedMovies));
+    window.localStorage.setItem(
+      "savedNominees",
+      JSON.stringify(nominatedMovies)
+    );
   }, [nominatedMovies]);
 
   const handleSubmit = (e) => {
@@ -77,7 +84,9 @@ const App = () => {
     setUserInput(e.target.value);
   };
 
-  const nominatedMoviesIds = nominatedMovies.map(nominatedMovie => nominatedMovie.imdbID);
+  const nominatedMoviesIds = nominatedMovies.map(
+    (nominatedMovie) => nominatedMovie.imdbID
+  );
 
   // add 'no poster available' image if movie poster is not available
   const moviePoster = (imgUrl) => {
@@ -86,7 +95,16 @@ const App = () => {
 
   return (
     <div>
-      {isSidebarOpened && <Sidebar />}
+      {isSidebarOpened && (
+        <Sidebar>
+          <NominatedMovies
+            movies={movies}
+            nominatedMovies={nominatedMovies}
+            removeMovie={removeMovie}
+            moviePoster={moviePoster}
+          />
+        </Sidebar>
+      )}
       {nominatedMovies.length === 5 && <Banner />}
       <ViewNomineesBtn toggleSidebar={toggleSidebar} />
       <header>
@@ -94,30 +112,25 @@ const App = () => {
       </header>
       <main>
         {/* <h1>The Shoppies</h1> */}
-        <SearchMovie 
-            handleSubmit={handleSubmit} 
-            handleChange={handleChange} 
-            requestStatus={requestStatus}
-            searchedInput={searchedInput}
-            userInput={userInput} />
-          {/* {requestStatus === "failure" && (
+        <SearchMovie
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          requestStatus={requestStatus}
+          searchedInput={searchedInput}
+          userInput={userInput}
+        />
+        {/* {requestStatus === "failure" && (
             <NoResults searchedInput={searchedInput} />
           )} */}
-          {/* {requestStatus === "ready" && <p>Please begin your search</p>} */}
-          {requestStatus === "success" && (
-            <DisplayMovies
-              movies={movies}
-              nominatedMoviesIds={nominatedMoviesIds}
-              nominateMovie={nominateMovie}
-              moviePoster={moviePoster}
-            />
-          )}
-          <NominatedMovies
+        {/* {requestStatus === "ready" && <p>Please begin your search</p>} */}
+        {requestStatus === "success" && (
+          <DisplayMovies
             movies={movies}
-            nominatedMovies={nominatedMovies}
-            removeMovie={removeMovie}
+            nominatedMoviesIds={nominatedMoviesIds}
+            nominateMovie={nominateMovie}
             moviePoster={moviePoster}
           />
+        )}
       </main>
     </div>
   );
