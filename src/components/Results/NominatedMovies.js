@@ -11,10 +11,10 @@ const NominatedMovies = (props) => {
         {props.nominatedMovies.map(({ Title, Year, imdbID, Poster }) => {
           return (
             <li key={imdbID} className={styles.movieCard}>
-              <div className={styles.movieCardThumbnail}>
+              <div className={styles.movieThumbnail}>
                 <img src={props.moviePoster(Poster)} alt="Poster of movie" className="posterSize" />
               </div>
-              <div className={styles.movieCardContent}>
+              <div className={styles.movieContent}>
                 <div className={styles.movieTitle}>
                    <p className={styles.movieYear}>Released in {Year}</p>
                   <h3>{Title}</h3>

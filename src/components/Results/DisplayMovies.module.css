@@ -13,8 +13,18 @@
     text-shadow: 6px 6px #3fcfd4a2;
     -webkit-text-fill-color: #fff;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #383435;
-    
+    -webkit-text-stroke-color: #383435; 
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+    justify-items: center;
+    margin-top: 4rem;
+    background-image: url("../../assets/resultWaves.svg");
+    background-size: 21rem;
+    padding: 2rem;
 }
 
 .divider {
@@ -35,4 +45,48 @@
     transform: rotate(0deg);
 }
 
+.movieCard {
+    height: 43rem;
+    background-color: #fff;
+    width: 26rem;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    padding: 10px;
+    border: 2px solid #D4D7DE;
+    /* border-bottom: 6px solid #3fd0d4; */
+    position: relative;
+    box-shadow: 12px 12px #3fd0d4;
+}
 
+.movieThumbnail {
+    height: 26rem;
+}
+
+.movieContent {
+    padding: 10px;
+    text-align: center;
+}
+
+.movieContent *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.movieContent button {
+    position: relative;
+    bottom: 0;
+    border: 2px solid #D4D7DE;
+    background-color: #fff;
+    padding: 6px 50px;
+    font-family: inherit;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.clickedMovieCard {
+    filter: grayscale(90%);
+}
+
+:global(.posterSize) {
+    /* height: 400px; */
+    height: 100%;
+    width: 100%;
+}
