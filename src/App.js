@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
 import ViewNomineesBtn from "./components/Buttons/ViewNomineesBtn";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import DisplayMovies from "./components/Results/DisplayMovies";
@@ -80,6 +81,7 @@ const App = () => {
 
   return (
     <div>
+      <Sidebar />
       {nominatedMovies.length === 5 && <Banner />}
       <ViewNomineesBtn />
       <header>
