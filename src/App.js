@@ -16,6 +16,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [nominatedMovies, setNominatedMovies] = useState([]);
   const [requestStatus, setRequestStatus] = useState("ready");
+  const [isSidebarOpened, setIsSidebarOpened] = useState(false);
 
   const getMovies = async () => {
     try {
@@ -50,6 +51,10 @@ const App = () => {
     setNominatedMovies([...newNominatedMovies]);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpened(!isSidebarOpened);
+  }
+
   useEffect(() => {
     const savedList = window.localStorage.getItem("savedNominees");
     const parsedList = JSON.parse(savedList);
@@ -81,9 +86,9 @@ const App = () => {
 
   return (
     <div>
-      <Sidebar />
+      {isSidebarOpened && <Sidebar />}
       {nominatedMovies.length === 5 && <Banner />}
-      <ViewNomineesBtn />
+      <ViewNomineesBtn toggleSidebar={toggleSidebar} />
       <header>
         <Header />
       </header>
