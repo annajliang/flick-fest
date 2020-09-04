@@ -103,33 +103,35 @@ const App = () => {
             moviePoster={moviePoster}
           />
         </Sidebar>
-      {nominatedMovies.length === 5 && <Banner />}
-      <ViewNomineesBtn toggleSidebar={toggleSidebar} />
-      <header>
-        <Header />
-      </header>
-      <main>
-        {/* <h1>The Shoppies</h1> */}
-        <SearchMovie
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-          requestStatus={requestStatus}
-          searchedInput={searchedInput}
-          userInput={userInput}
-        />
-        {/* {requestStatus === "failure" && (
-            <NoResults searchedInput={searchedInput} />
-          )} */}
-        {/* {requestStatus === "ready" && <p>Please begin your search</p>} */}
-        {requestStatus === "success" && (
-          <DisplayMovies
-            movies={movies}
-            nominatedMoviesIds={nominatedMoviesIds}
-            nominateMovie={nominateMovie}
-            moviePoster={moviePoster}
+      <div className={`content ${isSidebarOpened && "slideContent"}`}>
+        {nominatedMovies.length === 5 && <Banner />}
+        <ViewNomineesBtn toggleSidebar={toggleSidebar} />
+        <header>
+          <Header />
+        </header>
+        <main>
+          {/* <h1>The Shoppies</h1> */}
+          <SearchMovie
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            requestStatus={requestStatus}
+            searchedInput={searchedInput}
+            userInput={userInput}
           />
-        )}
-      </main>
+          {/* {requestStatus === "failure" && (
+              <NoResults searchedInput={searchedInput} />
+            )} */}
+          {/* {requestStatus === "ready" && <p>Please begin your search</p>} */}
+          {requestStatus === "success" && (
+            <DisplayMovies
+              movies={movies}
+              nominatedMoviesIds={nominatedMoviesIds}
+              nominateMovie={nominateMovie}
+              moviePoster={moviePoster}
+            />
+          )}
+        </main>
+      </div>
     </div>
   );
 };
