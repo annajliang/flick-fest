@@ -7,7 +7,7 @@ const NominatedMovies = (props) => {
   return (
     <section className={styles.container}>
       <h2>Nominees List</h2>
-      <ul className={styles.gridContainer}>
+      <ul className={styles.flexContainer}>
         {props.nominatedMovies.map(({ Title, Year, imdbID, Poster }) => {
           return (
             <li key={imdbID} className={styles.movieCard}>

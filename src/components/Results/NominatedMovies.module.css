@@ -9,11 +9,9 @@
     letter-spacing: -2px;
 }
 
-.gridContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-    justify-items: center;
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 4rem;
     background-image: url("../../assets/resultWaves.svg");
     background-size: 21rem;
@@ -31,6 +29,10 @@
     /* border-bottom: 6px solid #3fd0d4; */
     position: relative;
     box-shadow: 8px 8px #3fd0d4;
+}
+
+.movieCard:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 .movieCardContent {
