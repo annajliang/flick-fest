@@ -1,20 +1,47 @@
 .container {
     position: sticky;
     z-index: 100;
-    top: 3rem;
+    top: 5rem;
 }
 
 .viewNominees {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     position: absolute;
-    right: 3rem;
+    left: 3rem;
+    /* border-radius: 50%; */
     font-family: inherit;
     font-size: 1.5rem;
-    border: 2px solid #fff;
-    background-color: #2b3c6b;
+    /* border: 2px solid #fff; */
+    background-color: transparent;
     padding: 1rem 2rem;
     color: #fff;
+    width: 60px;
+    height: 55px;
     cursor: pointer;
+}
+
+.filmIcon {
+    font-size: 4rem;
+    color: #2b3c6b;
+}
+
+.nomineeNotification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.1rem;
+    width: 2.1rem;
+    border-radius: 50%;
+    background-color: #ff685d;
+    color: white;
+    position: absolute;
+    z-index: 4;
+    top: 5px;
+    right: 5px;
+    font-size: 1.3rem;
 }
 
 

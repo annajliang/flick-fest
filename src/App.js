@@ -136,8 +136,13 @@ const App = () => {
         />
       </Sidebar>
       <div className={`content ${isSidebarOpened && "slideContent"}`}>
-        {nominatedMovies.length === 5 && isBannerVisibie && <Banner closeBanner={closeBanner}/>}
-        <ViewNomineesBtn toggleSidebar={toggleSidebar} />
+        {nominatedMovies.length === 5 && isBannerVisibie && (
+          <Banner closeBanner={closeBanner} />
+        )}
+        <ViewNomineesBtn
+          toggleSidebar={toggleSidebar}
+          nominatedMovies={nominatedMovies}
+        />
         <header>
           <Header scrollTo={scrollTo} />
         </header>
