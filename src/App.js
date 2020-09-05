@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
@@ -7,6 +7,7 @@ import ViewNomineesBtn from "./components/Buttons/ViewNomineesBtn";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import DisplayMovies from "./components/Results/DisplayMovies";
 import NominatedMovies from "./components/Results/NominatedMovies";
+import smoothScroll from "./helper/smoothScroll";
 import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
@@ -19,6 +20,8 @@ const App = () => {
   const [nominatedMovies, setNominatedMovies] = useState([]);
   const [requestStatus, setRequestStatus] = useState("ready");
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
+  const displayMoviesRef = useRef();
+  const searchMoviesRef = useRef();
 
   const getMovies = async () => {
     try {
@@ -28,7 +31,7 @@ const App = () => {
           s: userInput,
         },
       });
-      console.log('movie result', movieResult.data)
+      console.log("movie result", movieResult.data);
       const moviesOnly = movieResult.data.Search.filter(
         (movie) => movie.Type === "movie"
       );
@@ -40,6 +43,13 @@ const App = () => {
       setRequestStatus("failure");
       setSearchedInput(userInput);
     }
+  };
+
+  // This method is used as helper to scroll when called from Header.js
+  // @param: event - on which event it gets called - click here
+  const scrollTo = () => {
+    // e.preventDefault();
+    smoothScroll(searchMoviesRef);
   };
 
   const nominateMovie = (id) => {
@@ -96,38 +106,44 @@ const App = () => {
     return imgUrl === "N/A" ? noPoster : imgUrl;
   };
 
+  console.log(displayMoviesRef)
+
   return (
     <div>
-        <Sidebar isSidebarOpened={isSidebarOpened}>
-          <NominatedMovies
-            movies={movies}
-            nominatedMovies={nominatedMovies}
-            removeMovie={removeMovie}
-            moviePoster={moviePoster}
-          />
-        </Sidebar>
+      <Sidebar isSidebarOpened={isSidebarOpened}>
+        <NominatedMovies
+          movies={movies}
+          nominatedMovies={nominatedMovies}
+          removeMovie={removeMovie}
+          moviePoster={moviePoster}
+        />
+      </Sidebar>
       <div className={`content ${isSidebarOpened && "slideContent"}`}>
         {nominatedMovies.length === 5 && <Banner />}
         <ViewNomineesBtn toggleSidebar={toggleSidebar} />
         <header>
-          <Header />
+          <Header scrollTo={scrollTo} />
         </header>
         <main>
-          <SearchMovie
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            requestStatus={requestStatus}
-            searchedInput={searchedInput}
-            userInput={userInput}
-          />
-          {requestStatus === "success" && (
-            <DisplayMovies
-              movies={movies}
-              nominatedMoviesIds={nominatedMoviesIds}
-              nominateMovie={nominateMovie}
-              moviePoster={moviePoster}
+          <section ref={searchMoviesRef}>
+            <SearchMovie
+              handleSubmit={handleSubmit}
+              handleChange={handleChange}
+              requestStatus={requestStatus}
+              searchedInput={searchedInput}
+              userInput={userInput}
             />
-          )}
+          </section>
+          <section ref={displayMoviesRef}>
+            {requestStatus === "success" && (
+              <DisplayMovies
+                movies={movies}
+                nominatedMoviesIds={nominatedMoviesIds}
+                nominateMovie={nominateMovie}
+                moviePoster={moviePoster}
+              />
+            )}
+          </section>
         </main>
       </div>
     </div>

@@ -8,7 +8,7 @@ import styles from "./SearchMovie.module.css";
 
 const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, searchedInput }) => {
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.backgroundPattern}>
         <div className={`wrapper ${styles.searchArea}`}>
           <h2 className={styles.searchMovieHeader}>Search Movie</h2>
@@ -33,7 +33,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
              )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

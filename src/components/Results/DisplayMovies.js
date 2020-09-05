@@ -6,7 +6,7 @@ import styles from "./DisplayMovies.module.css";
 
 const DisplayMovies = (props) => {
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className="wrapper">
         <h2 className={styles.divider}>Pick Your 5 Faves!</h2>
         {/* <img src={divider} alt="" className={styles.divider} /> */}
@@ -36,7 +36,7 @@ const DisplayMovies = (props) => {
           })}
         </ul>
       </div>
-    </section>
+    </div>
     );
 }
 
