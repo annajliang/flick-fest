@@ -12,7 +12,7 @@ const Header = ({ scrollTo }) => {
           <div className={styles.title}>
             <h1>The Shoppies</h1>
             <img src={divider} alt="" className={styles.divider} />
-            <div className={styles.instructions}>
+            <div className={styles.introText}>
               <p className={styles.textMargin}>
                 Welcome to Shopify's 1st ever virtual movie awards.
               </p>
@@ -34,15 +34,8 @@ const Header = ({ scrollTo }) => {
                 announce the results on September 8 at 9 a.m. ET. so get your
                 votes in asap!
               </p>
-              <button className={styles.voteNow} onClick={scrollTo}>
-                Vote below!
-                <span
-                  role="img"
-                  aria-label="Backhand Index Pointing Down"
-                  className={styles.emoji}
-                >
-                  👇
-                </span>
+              <button className={styles.voteNowBtn} onClick={scrollTo}>
+                Vote Now
               </button>
             </div>
           </div>
