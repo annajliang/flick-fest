@@ -1,10 +1,10 @@
 import React from "react";
 import NominateBtn from "../Buttons/NominateBtn";
 import PropTypes from 'prop-types';
-import styles from "./DisplayMovies.module.css";
+import styles from "./MovieResults.module.css";
 // import divider from "../../assets/resultsDivider.svg";
 
-const DisplayMovies = (props) => {
+const MovieResults = (props) => {
   return (
     <div className={styles.container}>
       <div className="wrapper">
@@ -40,11 +40,11 @@ const DisplayMovies = (props) => {
     );
 }
 
-DisplayMovies.propTypes = {
+MovieResults.propTypes = {
   movies: PropTypes.array.isRequired,
   moviePoster: PropTypes.func,
   nominateMovie: PropTypes.func,
   nominatedMoviesIds: PropTypes.array,
 }
 
-export default DisplayMovies;
+export default MovieResults;

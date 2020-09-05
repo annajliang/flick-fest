@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import ViewNomineesBtn from "./components/Buttons/ViewNomineesBtn";
 import SearchMovie from "./components/SearchMovie/SearchMovie";
-import DisplayMovies from "./components/Results/DisplayMovies";
+import MovieResults from "./components/Results/MovieResults";
 import NominatedMovies from "./components/Results/NominatedMovies";
 import smoothScroll from "./helper/smoothScroll";
 import noPoster from "./assets/noPoster.jpg";
@@ -20,7 +20,7 @@ const App = () => {
   const [nominatedMovies, setNominatedMovies] = useState([]);
   const [requestStatus, setRequestStatus] = useState("ready");
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
-  const displayMoviesRef = useRef();
+  const movieResultsRef = useRef();
   const searchMoviesRef = useRef();
 
   const getMovies = async () => {
@@ -83,8 +83,8 @@ const App = () => {
 
   useEffect(() => {
     if (requestStatus === "success") {
-      // scrollTo(displayMoviesRef);
-      setTimeout(() => scrollTo(displayMoviesRef), 0);
+      // scrollTo(movieResultsRef);
+      setTimeout(() => scrollTo(movieResultsRef), 0);
     }
   }, [requestStatus]);
 
@@ -113,8 +113,6 @@ const App = () => {
     return imgUrl === "N/A" ? noPoster : imgUrl;
   };
 
-  console.log(displayMoviesRef)
-
   return (
     <div>
       <Sidebar isSidebarOpened={isSidebarOpened}>
@@ -142,9 +140,9 @@ const App = () => {
               scrollTo={scrollTo}
             />
           </section>
-          <section ref={displayMoviesRef}>
+          <section ref={movieResultsRef}>
             {requestStatus === "success" && (
-              <DisplayMovies
+              <MovieResults
                 movies={movies}
                 nominatedMoviesIds={nominatedMoviesIds}
                 nominateMovie={nominateMovie}
