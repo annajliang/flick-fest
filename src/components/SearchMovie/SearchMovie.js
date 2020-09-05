@@ -14,6 +14,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
           <h2 className={styles.searchMovieHeader}>Search Movie</h2>
             <Instructions />
             <form action="input" onSubmit={handleSubmit}>
+              <label htmlFor="searchMovie"></label>
               <input
                 type="search"
                 id="searchMovie"
@@ -23,7 +24,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
                 placeholder="Enter the movie you wish to search..."
                 required
               />
-              <button type="submit" className={styles.searchBtn}>
+              <button type="submit" className={styles.searchBtn} aria-label="submit search" data-testid="searchBtn">
                   <FontAwesomeIcon icon={faSearch} />
               </button>
             </form>

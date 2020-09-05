@@ -10,6 +10,8 @@ import NominatedMovies from "./components/Results/NominatedMovies";
 import noPoster from "./assets/noPoster.jpg";
 import "./App.css";
 
+export const URL = "https://www.omdbapi.com/";
+
 const App = () => {
   const [userInput, setUserInput] = useState("");
   const [searchedInput, setSearchedInput] = useState("");
@@ -20,12 +22,13 @@ const App = () => {
 
   const getMovies = async () => {
     try {
-      const movieResult = await axios.get("https://www.omdbapi.com/", {
+      const movieResult = await axios.get(URL, {
         params: {
           apikey: "e3ae5908",
           s: userInput,
         },
       });
+      console.log('movie result', movieResult.data)
       const moviesOnly = movieResult.data.Search.filter(
         (movie) => movie.Type === "movie"
       );
@@ -137,3 +140,4 @@ const App = () => {
 };
 
 export default App;
+
