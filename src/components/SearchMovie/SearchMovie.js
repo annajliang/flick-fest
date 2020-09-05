@@ -21,7 +21,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
                 name="searchMovie"
                 onChange={handleChange}
                 value={userInput}
-                placeholder="Enter the movie you wish to search..."
+                placeholder="Enter your movie title..."
                 required
               />
               <button type="submit" className={styles.searchBtn} aria-label="submit search" data-testid="searchBtn" onClick={scrollTo}>

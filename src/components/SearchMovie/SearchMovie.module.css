@@ -22,7 +22,7 @@
 
 .backgroundPattern {
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     background-color: #FFBDBA;
     position: relative;
     background-image: url("../../assets/diagonalWaves.svg");
