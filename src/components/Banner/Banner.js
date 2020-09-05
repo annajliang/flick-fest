@@ -1,5 +1,4 @@
 import React from "react";
-import CloseBanner from "./CloseBanner";
 import styles from "./Banner.module.css";
 
 const Banner = ({ closeBanner }) => {
@@ -13,7 +12,13 @@ const Banner = ({ closeBanner }) => {
         {" "}
         🎉
       </span>
-      <CloseBanner closeBanner={closeBanner} />
+      <span
+        className={styles.closeBanner}
+        tabIndex="0"
+        role="button"
+        aria-label="Close"
+        onClick={closeBanner}
+      ></span>
     </div>
   );
 };

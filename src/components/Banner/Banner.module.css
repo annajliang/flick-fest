@@ -26,6 +26,23 @@
     font-size: 1.7rem;
 }
 
+.closeBanner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBanner:after {
+    content: 'x';
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .emoji {
     margin-left: 6px;
 }
