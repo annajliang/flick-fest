@@ -55,9 +55,14 @@ const App = () => {
 
   const nominateMovie = (id) => {
     const clickedMovie = movies.find((movie) => movie.imdbID === id);
+    console.log(nominatedMovies.length)
 
     if (nominatedMovies.length < 5) {
       setNominatedMovies([...nominatedMovies, clickedMovie]);
+    } 
+    
+    if (nominatedMovies.length === 4) {
+      setIsBannerVisible(true);
     }
   };
 
@@ -80,7 +85,6 @@ const App = () => {
   useEffect(() => {
     const savedList = window.localStorage.getItem("savedNominees");
     const parsedList = JSON.parse(savedList);
-    console.log(parsedList.length)
 
     if (parsedList !== null) {
       setNominatedMovies([...parsedList]);
