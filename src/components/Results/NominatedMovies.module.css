@@ -27,6 +27,13 @@
     transform: rotate(0deg);
 }
 
+.nomineesListDesc {
+    text-align: center;
+    margin: 4rem 3rem 0;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
 .flexContainer {
     display: flex;
     flex-wrap: wrap;

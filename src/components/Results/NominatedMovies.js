@@ -8,7 +8,7 @@ const NominatedMovies = (props) => {
     <section className={styles.container}>
       <h2 className={styles.divider}>Nominees List</h2>
       {props.nominatedMovies.length === 0 ? (
-        <p>EMPTY</p>
+        <p className={styles.nomineesListDesc}>Your nominees list is currently empty.</p>
       ) : (
         <ul className={styles.flexContainer}>
           {props.nominatedMovies.map(({ Title, Year, imdbID, Poster }) => {
