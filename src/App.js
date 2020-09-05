@@ -82,6 +82,13 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    if (requestStatus === "success") {
+      // scrollTo(displayMoviesRef);
+      setTimeout(() => scrollTo(displayMoviesRef), 0);
+    }
+  }, [requestStatus]);
+
+  useEffect(() => {
     window.localStorage.setItem(
       "savedNominees",
       JSON.stringify(nominatedMovies)
@@ -132,6 +139,7 @@ const App = () => {
               requestStatus={requestStatus}
               searchedInput={searchedInput}
               userInput={userInput}
+              scrollTo={scrollTo}
             />
           </section>
           <section ref={displayMoviesRef}>

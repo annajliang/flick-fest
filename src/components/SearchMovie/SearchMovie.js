@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SearchMovie.module.css";
 
-const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, searchedInput }) => {
+const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, searchedInput, scrollTo }) => {
   return (
     <div className={styles.container}>
       <div className={styles.backgroundPattern}>
@@ -24,7 +24,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
                 placeholder="Enter the movie you wish to search..."
                 required
               />
-              <button type="submit" className={styles.searchBtn} aria-label="submit search" data-testid="searchBtn">
+              <button type="submit" className={styles.searchBtn} aria-label="submit search" data-testid="searchBtn" onClick={scrollTo}>
                   <FontAwesomeIcon icon={faSearch} />
               </button>
             </form>
