@@ -12,7 +12,7 @@ const NoResults = ({ searchedInput }) => {
 };
 
 NoResults.propTypes = {
-  searchedInput: PropTypes.string,
+  searchedInput: PropTypes.string.isRequired,
 }
 
 export default NoResults;
