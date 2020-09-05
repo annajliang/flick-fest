@@ -113,7 +113,6 @@ const App = () => {
           <Header />
         </header>
         <main>
-          {/* <h1>The Shoppies</h1> */}
           <SearchMovie
             handleSubmit={handleSubmit}
             handleChange={handleChange}
@@ -121,10 +120,6 @@ const App = () => {
             searchedInput={searchedInput}
             userInput={userInput}
           />
-          {/* {requestStatus === "failure" && (
-              <NoResults searchedInput={searchedInput} />
-            )} */}
-          {/* {requestStatus === "ready" && <p>Please begin your search</p>} */}
           {requestStatus === "success" && (
             <DisplayMovies
               movies={movies}
