@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Banner.module.css";
 
 const Banner = ({ closeBanner }) => {
@@ -21,6 +22,10 @@ const Banner = ({ closeBanner }) => {
       ></span>
     </div>
   );
+};
+
+Banner.propTypes = {
+  closeBanner: PropTypes.func.isRequired,
 };
 
 export default Banner;

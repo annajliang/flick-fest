@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ViewNomineesBtn.module.css";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,6 +15,11 @@ const ViewNomineesBtn = ({ toggleSidebar, nominatedMovies }) => {
       </button>
     </div>
   );
+};
+
+ViewNomineesBtn.propTypes = {
+  toggleSidebar: PropTypes.func.isRequired,
+  nominatedMovies: PropTypes.array.isRequired,
 };
 
 export default ViewNomineesBtn;

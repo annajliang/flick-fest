@@ -1,5 +1,5 @@
 import React from "react";
-// import Navbar from "../Navbar/Navbar";
+import PropTypes from "prop-types";
 import divider from "../../assets/headerDivider.svg";
 import styles from "./Header.module.css";
 
@@ -57,6 +57,10 @@ const Header = ({ scrollTo }) => {
       </svg>
     </header>
   );
+};
+
+Header.propTypes = {
+  scrollTo: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -45,8 +45,8 @@ const NominatedMovies = (props) => {
 
 NominatedMovies.propTypes = {
   nominatedMovies: PropTypes.array.isRequired,
-  moviePoster: PropTypes.func,
-  removeMovie: PropTypes.func,
+  moviePoster: PropTypes.func.isRequired,
+  removeMovie: PropTypes.func.isRequired,
 };
 
 export default NominatedMovies;

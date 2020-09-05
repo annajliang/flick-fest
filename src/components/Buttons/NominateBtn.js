@@ -17,7 +17,6 @@ NominateBtn.propTypes = {
   nominateMovie: PropTypes.func.isRequired,
   movieId: PropTypes.string.isRequired,
   isDisabled: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
 };
 
 export default NominateBtn;

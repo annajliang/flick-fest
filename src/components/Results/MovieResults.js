@@ -2,14 +2,12 @@ import React from "react";
 import NominateBtn from "../Buttons/NominateBtn";
 import PropTypes from 'prop-types';
 import styles from "./MovieResults.module.css";
-// import divider from "../../assets/resultsDivider.svg";
 
 const MovieResults = (props) => {
   return (
     <div className={styles.container}>
       <div className="wrapper">
         <h2 className={styles.divider}>Pick Your 5 Faves!</h2>
-        {/* <img src={divider} alt="" className={styles.divider} /> */}
         <ul className={styles.gridContainer}>
           {props.movies.map(({ Title, Year, imdbID, Poster }) => {
             return (
@@ -42,9 +40,9 @@ const MovieResults = (props) => {
 
 MovieResults.propTypes = {
   movies: PropTypes.array.isRequired,
-  moviePoster: PropTypes.func,
-  nominateMovie: PropTypes.func,
-  nominatedMoviesIds: PropTypes.array,
+  moviePoster: PropTypes.func.isRequired,
+  nominateMovie: PropTypes.func.isRequired,
+  nominatedMoviesIds: PropTypes.array.isRequired,
 }
 
 export default MovieResults;

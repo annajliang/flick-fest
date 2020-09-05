@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = ({ children, isSidebarOpened, toggleSidebar }) => {
@@ -14,6 +15,12 @@ const Sidebar = ({ children, isSidebarOpened, toggleSidebar }) => {
     ></span>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  children: PropTypes.object.isRequired,
+  isSidebarOpened: PropTypes.bool.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
