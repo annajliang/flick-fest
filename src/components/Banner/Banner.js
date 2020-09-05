@@ -1,7 +1,8 @@
 import React from "react";
+import CloseBanner from "./CloseBanner";
 import styles from "./Banner.module.css";
 
-const Banner = () => {
+const Banner = ({ closeBanner }) => {
   return (
     <div className={styles.container}>
       <p>
@@ -12,6 +13,7 @@ const Banner = () => {
         {" "}
         🎉
       </span>
+      <CloseBanner closeBanner={closeBanner} />
     </div>
   );
 };

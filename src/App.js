@@ -20,6 +20,7 @@ const App = () => {
   const [nominatedMovies, setNominatedMovies] = useState([]);
   const [requestStatus, setRequestStatus] = useState("ready");
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
+  const [isBannerVisibie, setIsBannerVisible] = useState(false);
   const movieResultsRef = useRef();
   const searchMoviesRef = useRef();
 
@@ -72,14 +73,21 @@ const App = () => {
     setIsSidebarOpened(!isSidebarOpened);
   };
 
+  const closeBanner = () => {
+    setIsBannerVisible(false);
+  }
+
   useEffect(() => {
     const savedList = window.localStorage.getItem("savedNominees");
     const parsedList = JSON.parse(savedList);
+    console.log(parsedList.length)
 
     if (parsedList !== null) {
       setNominatedMovies([...parsedList]);
-    }
+      setIsBannerVisible(true);
+    } 
   }, []);
+
 
   useEffect(() => {
     if (requestStatus === "success") {
@@ -124,7 +132,7 @@ const App = () => {
         />
       </Sidebar>
       <div className={`content ${isSidebarOpened && "slideContent"}`}>
-        {nominatedMovies.length === 5 && <Banner />}
+        {nominatedMovies.length === 5 && isBannerVisibie && <Banner closeBanner={closeBanner}/>}
         <ViewNomineesBtn toggleSidebar={toggleSidebar} />
         <header>
           <Header scrollTo={scrollTo} />
