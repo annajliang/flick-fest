@@ -30,3 +30,18 @@
     overflow: hidden;
 }
 
+.closeSidebar {
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    font-size: 2rem;
+    color: #b1b1b1;
+}
+
+.closeSidebar:after {
+    content: 'x';
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
