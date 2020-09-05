@@ -1,9 +1,7 @@
 import React from "react";
-// import NominatedMovies from "./components/Results/NominatedMovies";
-import CloseBanner from "../Banner/CloseBanner";
 import styles from "./Sidebar.module.css";
 
-const Sidebar = ({ children, isSidebarOpened }) => {
+const Sidebar = ({ children, isSidebarOpened, toggleSidebar }) => {
   return (
     <div className={`${styles.slidingSidebar} ${isSidebarOpened ? styles.show : styles.hide}`}>
       {children}
@@ -12,7 +10,7 @@ const Sidebar = ({ children, isSidebarOpened }) => {
       tabIndex="0"
       role="button"
       aria-label="Close"
-      // onClick={closeBanner}
+      onClick={toggleSidebar}
     ></span>
     </div>
   );

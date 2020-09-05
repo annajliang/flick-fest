@@ -127,7 +127,7 @@ const App = () => {
 
   return (
     <div>
-      <Sidebar isSidebarOpened={isSidebarOpened}>
+      <Sidebar isSidebarOpened={isSidebarOpened} toggleSidebar={toggleSidebar}>
         <NominatedMovies
           movies={movies}
           nominatedMovies={nominatedMovies}
