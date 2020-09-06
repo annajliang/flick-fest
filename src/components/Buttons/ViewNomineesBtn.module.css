@@ -48,6 +48,7 @@
 @media (max-width: 1074px) {
    .container {
        z-index: 1000;
-       top: 2rem;
+       top: 5rem;
+       position: fixed;
    }
 }
