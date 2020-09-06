@@ -14,7 +14,7 @@ header {
     background-size: cover;
     height: 60vh;
     position: relative;
-    padding-top: 10rem;
+    padding-top: 7rem;
     z-index: 99;
 }
 
@@ -81,4 +81,72 @@ svg {
 .voteNowBtn:hover {
     box-shadow: 0 2px 0 0 #e6e6e8;
     transform: translateY(3px);
+}
+
+/* MEDIUM DEVICES (greater than 992px) */
+
+@media (max-width: 1322px) {
+    .introText {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1228px) {
+    .container {
+        padding-top: 10rem;
+    }
+}
+
+
+@media (max-width: 1139px) {
+    .container {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 1086px) {
+   .introText {
+       width: 90%;
+   }
+}
+
+/* SMALLEST (MOBILE) DEVICES (smaller than or equal to 768px) */
+
+@media (max-width: 763px) {
+    .introText {
+        width: 100%;
+    }
+}
+
+@media (max-width: 684px) {
+    h1 {
+        font-size: 7rem;
+        text-shadow: 5px 5px #f2cee6;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 6rem;
+        text-shadow: 5px 5px #f2cee6;
+    }
+
+    .voteNowBtn {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 3rem;
+        color: #34444c;
+        border: 2px solid #34444c;
+        border-radius: 5px;
+        font-size: 1.375rem;
+        background-color: #f3f3f6;
+        box-shadow: 0 5px 0 0 #e6e6e8;
+        padding: 1rem 2.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .introText {
+        font-size: 1.5rem;
+    }
 }
