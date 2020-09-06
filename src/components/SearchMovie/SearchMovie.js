@@ -6,24 +6,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SearchMovie.module.css";
 
-const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, searchedInput }) => {
+const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, searchedInput, scrollTo }) => {
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.backgroundPattern}>
         <div className={`wrapper ${styles.searchArea}`}>
           <h2 className={styles.searchMovieHeader}>Search Movie</h2>
             <Instructions />
             <form action="input" onSubmit={handleSubmit}>
+              <label htmlFor="searchMovie"></label>
               <input
                 type="search"
                 id="searchMovie"
                 name="searchMovie"
                 onChange={handleChange}
                 value={userInput}
-                placeholder="Enter the movie you wish to search..."
+                placeholder="Enter your movie title..."
                 required
               />
-              <button type="submit" className={styles.searchBtn}>
+              <button type="submit" className={styles.searchBtn} aria-label="submit search" data-testid="searchBtn" onClick={scrollTo}>
                   <FontAwesomeIcon icon={faSearch} />
               </button>
             </form>
@@ -32,13 +33,17 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
              )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
 SearchMovie.propTypes = {
-  handleSubmit: PropTypes.func,
-  handleChange: PropTypes.func,
-}
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  userInput: PropTypes.string.isRequired,
+  requestStatus: PropTypes.string.isRequired,
+  searchedInput: PropTypes.string.isRequired,
+  scrollTo: PropTypes.func.isRequired,
+};
 
 export default SearchMovie;

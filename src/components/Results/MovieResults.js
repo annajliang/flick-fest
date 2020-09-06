@@ -1,15 +1,13 @@
 import React from "react";
 import NominateBtn from "../Buttons/NominateBtn";
 import PropTypes from 'prop-types';
-import styles from "./DisplayMovies.module.css";
-// import divider from "../../assets/resultsDivider.svg";
+import styles from "./MovieResults.module.css";
 
-const DisplayMovies = (props) => {
+const MovieResults = (props) => {
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className="wrapper">
         <h2 className={styles.divider}>Pick Your 5 Faves!</h2>
-        {/* <img src={divider} alt="" className={styles.divider} /> */}
         <ul className={styles.gridContainer}>
           {props.movies.map(({ Title, Year, imdbID, Poster }) => {
             return (
@@ -36,15 +34,15 @@ const DisplayMovies = (props) => {
           })}
         </ul>
       </div>
-    </section>
+    </div>
     );
 }
 
-DisplayMovies.propTypes = {
+MovieResults.propTypes = {
   movies: PropTypes.array.isRequired,
-  moviePoster: PropTypes.func,
-  nominateMovie: PropTypes.func,
-  nominatedMoviesIds: PropTypes.array,
+  moviePoster: PropTypes.func.isRequired,
+  nominateMovie: PropTypes.func.isRequired,
+  nominatedMoviesIds: PropTypes.array.isRequired,
 }
 
-export default DisplayMovies;
+export default MovieResults;

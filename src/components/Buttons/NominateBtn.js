@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const NominateBtn = ({ nominateMovie, movieId, isDisabled }) => {
   return (
@@ -11,13 +11,12 @@ const NominateBtn = ({ nominateMovie, movieId, isDisabled }) => {
       {isDisabled ? "Nominated" : "Nominate"}
     </button>
   );
-}
+};
 
 NominateBtn.propTypes = {
-  nominateMovie: PropTypes.func,
-  movieId: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  text: PropTypes.string,
-}
+  nominateMovie: PropTypes.func.isRequired,
+  movieId: PropTypes.string.isRequired,
+  isDisabled: PropTypes.bool.isRequired,
+};
 
 export default NominateBtn;

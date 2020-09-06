@@ -55,5 +55,18 @@ ol, ul {
   width: 85%;
   margin: 0 auto;
   max-width: 1200px;
-  /* text-align: center; */
+}
+
+.slideContent {
+  margin-left: 40rem;
+}
+
+.content {
+    transition: all .5s ease;
+}
+
+@media (max-width: 1074px) {
+  .slideContent {
+    margin-left: 0;
+  }
 }

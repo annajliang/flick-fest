@@ -1,20 +1,18 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const RemoveBtn = ({ removeMovie, movieId, text }) => {
   return (
-    <button
-      onClick={() => removeMovie(movieId)}
-      id={movieId}
-    >
+    <button onClick={() => removeMovie(movieId)} id={movieId}>
       {text}
     </button>
   );
-}
+};
 
 RemoveBtn.propTypes = {
   removeMovie: PropTypes.func,
   movieId: PropTypes.string,
-}
+  text: PropTypes.string,
+};
 
 export default RemoveBtn;
