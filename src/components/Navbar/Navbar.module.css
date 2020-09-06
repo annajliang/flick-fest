@@ -1,8 +1,14 @@
 .container {
     background-color: #ffffff;
-    height: 6rem;
+    height: 100%;
     position: relative;
     width: 100%;
     z-index: 100;
     top: 0;
+}
+
+.container div {
+    display: flex;
+    height: 6.5rem;
+    align-items: center;
 }
