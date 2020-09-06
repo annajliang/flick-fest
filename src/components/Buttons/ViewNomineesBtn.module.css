@@ -44,4 +44,12 @@
     font-size: 1.3rem;
 }
 
+/* MEDIUM DEVICES (greater than 992px) */
 
+@media (max-width: 1074px) {
+   .container {
+       z-index: 1000;
+       top: 5rem;
+       position: fixed;
+   }
+}

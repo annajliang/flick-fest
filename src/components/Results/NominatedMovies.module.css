@@ -120,3 +120,67 @@
     margin-bottom: 5px;
     padding: 0.7rem;
 }
+
+/* MEDIUM DEVICES (greater than 992px) */
+
+@media (max-width: 1074px) {
+    .container {
+        margin: 7rem 0;
+    }
+
+    .movieCard {
+        height: 19rem;
+    }
+
+   .flexContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-row-gap: 10px;
+        grid-column-gap: 30px;
+        background-image: url("../../assets/resultWaves.svg");
+        margin-left: 3rem;
+        margin-right: 3rem;
+   }
+
+     .movieThumbnail {
+         width: 80%;
+     }
+}
+
+/* SMALL (TABLET) DEVICES (greater than 768px) */
+
+@media (max-width: 934px) {
+    .flexContainer {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+/* SMALLEST (MOBILE) DEVICES (smaller than or equal to 768px) */
+
+@media (max-width: 749px) {
+   .movieThumbnail {
+       width: 50%;
+   }
+}
+
+@media (max-width: 525px) {
+    .flexContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .movieCard {
+        height: 15rem;
+    }
+
+    .movieThumbnail {
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    .container {
+       margin: 10rem 0;
+    }
+}

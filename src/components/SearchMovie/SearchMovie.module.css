@@ -34,6 +34,7 @@ form {
     position: relative;
     /* z-index: 4; */
     display: inline-block;
+    width: 60%;
 }
 
 input, .searchBtn {
@@ -42,7 +43,7 @@ input, .searchBtn {
 }
 
 input[type="search"] {
-    width: 65rem;
+    width: 100%;
     height: 7rem;
     /* border-radius: 5px; */
     /* margin-left: 15rem; */

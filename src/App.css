@@ -64,3 +64,9 @@ ol, ul {
 .content {
     transition: all .5s ease;
 }
+
+@media (max-width: 1074px) {
+  .slideContent {
+    margin-left: 0;
+  }
+}
