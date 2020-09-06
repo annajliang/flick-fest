@@ -118,19 +118,17 @@ svg {
     }
 }
 
-@media (max-width: 611px) {
+@media (max-width: 614px) {
+    h1 {
+        letter-spacing: -3px;
+    }
+
     .title {
         padding-top: 4rem;
     }
 }
 
 @media (max-width: 500px) {
-    h1 {
-        font-size: 6rem;
-        text-shadow: 5px 5px #f2cee6;
-        letter-spacing: -3px;
-    }
-
     .voteNowBtn {
         padding: 1rem 2.5rem;
     }
@@ -143,6 +141,12 @@ svg {
 
     .introText {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 368px) {
+    h1 {
+        font-size: 6rem;
     }
 }
 

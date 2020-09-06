@@ -5,3 +5,9 @@
 .textMargin {
     margin-bottom: 1rem;
 }
+
+@media (max-width: 433px) {
+    .container {
+        font-size: 1.5rem;
+    }
+}

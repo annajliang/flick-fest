@@ -7,7 +7,7 @@ const MovieResults = (props) => {
   return (
     <div className={styles.container}>
       <div className="wrapper">
-        <h2 className={styles.divider}>Pick Your 5 Faves!</h2>
+        <h2 className={styles.divider}>Pick Your Flicks!</h2>
         <ul className={styles.gridContainer}>
           {props.movies.map(({ Title, Year, imdbID, Poster }) => {
             return (
