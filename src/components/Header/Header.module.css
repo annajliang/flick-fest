@@ -125,6 +125,12 @@ svg {
     }
 }
 
+@media (max-width: 611px) {
+    .title {
+        padding-top: 4rem;
+    }
+}
+
 @media (max-width: 500px) {
     h1 {
         font-size: 6rem;
@@ -137,8 +143,18 @@ svg {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 433px) {
+    .title {
+        padding-top: 2rem;
+    }
+
     .introText {
         font-size: 1.5rem;
     }
 }
+
+/* @media (max-width: 420px) {
+    .introText {
+        font-size: 1.5rem;
+    }
+} */
