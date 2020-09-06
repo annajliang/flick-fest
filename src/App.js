@@ -3,7 +3,8 @@ import axios from "axios";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
-import ViewNomineesBtn from "./components/Buttons/ViewNomineesBtn";
+// import ViewNomineesBtn from "./components/Buttons/ViewNomineesBtn";
+import Navbar from "./components/Navbar/Navbar"
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import MovieResults from "./components/Results/MovieResults";
 import NominatedMovies from "./components/Results/NominatedMovies";
@@ -141,15 +142,21 @@ const App = () => {
         />
       </Sidebar>
       <div className={`content ${isSidebarOpened && "slideContent"}`}>
-        {nominatedMovies.length === 5 && isBannerVisibie && (
-          <Banner closeBanner={closeBanner} />
-        )}
-        <ViewNomineesBtn
-          toggleSidebar={toggleSidebar}
-          nominatedMovies={nominatedMovies}
-        />
+        <div className="fixedContainer">
+          {nominatedMovies.length === 5 && isBannerVisibie && (
+            <Banner closeBanner={closeBanner} />
+          )}
+          <Navbar
+            toggleSidebar={toggleSidebar}
+            nominatedMovies={nominatedMovies}
+          />
+        </div>
         <header>
-          <Header scrollTo={scrollTo} />
+          <Header
+            scrollTo={scrollTo}
+            toggleSidebar={toggleSidebar}
+            nominatedMovies={nominatedMovies}
+          />
         </header>
         <main>
           <section ref={searchMoviesRef}>
