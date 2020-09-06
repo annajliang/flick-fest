@@ -91,11 +91,11 @@ svg {
     }
 }
 
-/* @media (max-width: 1228px) {
-    .container {
-        padding-top: 10rem;
+@media (max-width: 1150px) {
+    .voteNowBtn {
+        margin-top: 0;
     }
-} */
+}
 
 @media (max-width: 1086px) {
    .introText {
@@ -131,15 +131,6 @@ svg {
     }
 
     .voteNowBtn {
-        text-transform: uppercase;
-        font-weight: 600;
-        margin-top: 3rem;
-        color: #34444c;
-        border: 2px solid #34444c;
-        border-radius: 5px;
-        font-size: 1.375rem;
-        background-color: #f3f3f6;
-        box-shadow: 0 5px 0 0 #e6e6e8;
         padding: 1rem 2.5rem;
     }
 }
