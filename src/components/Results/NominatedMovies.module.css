@@ -164,3 +164,23 @@
        width: 50%;
    }
 }
+
+@media (max-width: 525px) {
+    .flexContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .movieCard {
+        height: 15rem;
+    }
+
+    .movieThumbnail {
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    .container {
+       margin: 10rem 0;
+    }
+}
