@@ -26,7 +26,7 @@ describe("App", () => {
     const utils = render(<App />);
     // looks for the searchbar via the placeholder test
     const input = utils.getByPlaceholderText(
-      "Enter the movie you wish to search..."
+      "Enter your movie title..."
     );
     // ensures that the value of the input is empty string on inital render
     expect(input).toHaveValue("");
@@ -40,10 +40,10 @@ describe("App", () => {
 
     // user's search term is not found, then 'not found' message is shown
     await waitForElement(() =>
-      utils.getByText("Sorry, but we couldn't find the hire me shopify.")
+      utils.getByText("Sorry, but we couldn't find hire me shopify.")
     );
     const emptyMessage = utils.getByText(
-      "Sorry, but we couldn't find the hire me shopify."
+      "Sorry, but we couldn't find hire me shopify."
     );
     expect(emptyMessage).toBeInTheDocument();
 
@@ -78,7 +78,7 @@ describe("App", () => {
     const utils = render(<App />);
     // looks for the searchbar via the placeholder test
     const input = utils.getByPlaceholderText(
-      "Enter the movie you wish to search..."
+      "Enter your movie title..."
     );
     // ensures that the value of the input is empty string on inital render
     expect(input).toHaveValue("");
