@@ -32,12 +32,19 @@ const App = () => {
           s: userInput,
         },
       });
-      console.log("movie result", movieResult.data);
+
       const moviesOnly = movieResult.data.Search.filter(
         (movie) => movie.Type === "movie"
       );
-      setMovies(moviesOnly);
-      setRequestStatus("success");
+
+      if (moviesOnly.length > 0) {
+        setMovies(moviesOnly);
+        setRequestStatus("success");
+      } else {
+        setMovies(moviesOnly);
+        setRequestStatus("failure");
+        setSearchedInput(userInput);
+      }
     } catch (err) {
       console.log(err);
       setMovies([]);
@@ -55,12 +62,11 @@ const App = () => {
 
   const nominateMovie = (id) => {
     const clickedMovie = movies.find((movie) => movie.imdbID === id);
-    console.log(nominatedMovies.length)
 
     if (nominatedMovies.length < 5) {
       setNominatedMovies([...nominatedMovies, clickedMovie]);
-    } 
-    
+    }
+
     if (nominatedMovies.length === 4) {
       setIsBannerVisible(true);
     }
@@ -80,7 +86,7 @@ const App = () => {
 
   const closeBanner = () => {
     setIsBannerVisible(false);
-  }
+  };
 
   useEffect(() => {
     const savedList = window.localStorage.getItem("savedNominees");
@@ -89,9 +95,8 @@ const App = () => {
     if (parsedList !== null) {
       setNominatedMovies([...parsedList]);
       setIsBannerVisible(true);
-    } 
+    }
   }, []);
-
 
   useEffect(() => {
     if (requestStatus === "success") {
@@ -174,4 +179,3 @@ const App = () => {
 };
 
 export default App;
-
