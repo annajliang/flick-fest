@@ -46,3 +46,22 @@
 .emoji {
     margin-left: 6px;
 }
+
+@media (max-width: 450px) {
+    .container p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 383px) {
+    .container p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        justify-content: flex-start;
+        padding-left: 1.5rem;
+    }
+}
