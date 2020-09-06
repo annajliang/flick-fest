@@ -76,3 +76,75 @@ input[type="search"] {
     color: #fff;
     /* border: 5px solid #fff; */
 }
+
+@media (max-width: 1295px) {
+    form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1035px) {
+    .backgroundPattern {
+        height: 80vh;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 614px) {
+    .searchMovieHeader {
+        font-size: 6rem;
+        top: -38px;
+    }
+}
+
+@media (max-width: 564px) {
+    .backgroundPattern {
+        height: 100vh;
+    }
+
+    .searchArea {
+        margin: 0 2rem;
+        box-shadow: 10px 10px #3fd0d4;
+    }
+}
+
+@media (max-width: 520px) {
+    input[type="search"] {
+        height: 6rem;
+        font-size: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .searchBtn {
+        width: 5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 472px) {
+    .searchMovieHeader span {
+        position: relative;
+        top: -1rem;
+    }
+}
+
+@media (max-width: 415px) {
+    .searchArea {
+        padding: 3rem 3rem;
+    }
+}
+
+@media (max-width: 390px) {
+    input[type="search"] {
+        height: 5rem;
+        font-size: 1.3rem;
+    }
+
+    .searchBtn {
+        width: 4rem;
+        font-size: 1.5rem;
+    }
+}

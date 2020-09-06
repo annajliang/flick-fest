@@ -11,7 +11,7 @@ const SearchMovie = ({ handleSubmit, handleChange, userInput, requestStatus, sea
     <div className={styles.container}>
       <div className={styles.backgroundPattern}>
         <div className={`wrapper ${styles.searchArea}`}>
-          <h2 className={styles.searchMovieHeader}>Search Movie</h2>
+          <h2 className={styles.searchMovieHeader}>Search <span>Movie</span></h2>
             <Instructions />
             <form action="input" onSubmit={handleSubmit}>
               <label htmlFor="searchMovie"></label>
