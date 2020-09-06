@@ -1,8 +1,8 @@
-.container {
+/* .container {
     position: sticky;
     z-index: 100;
     top: 5rem;
-}
+} */
 
 .viewNominees {
     display: flex;
@@ -10,7 +10,7 @@
     align-items: center;
     border: none;
     position: absolute;
-    left: 3rem;
+    /* left: 3rem; */
     /* border-radius: 50%; */
     font-family: inherit;
     font-size: 1.5rem;
@@ -19,7 +19,7 @@
     padding: 1rem 2rem;
     color: #fff;
     width: 60px;
-    height: 55px;
+    /* height: 55px; */
     cursor: pointer;
 }
 
@@ -46,10 +46,10 @@
 
 /* MEDIUM DEVICES (greater than 992px) */
 
-@media (max-width: 1074px) {
+/* @media (max-width: 1074px) {
    .container {
        z-index: 1000;
        top: 5rem;
        position: fixed;
    }
-}
+} */

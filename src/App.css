@@ -65,6 +65,13 @@ ol, ul {
     transition: all .5s ease;
 }
 
+.fixedContainer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 @media (max-width: 1074px) {
   .slideContent {
     margin-left: 0;
