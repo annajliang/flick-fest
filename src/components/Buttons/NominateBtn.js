@@ -8,7 +8,7 @@ const NominateBtn = ({ nominateMovie, movieId, isDisabled }) => {
       onClick={() => nominateMovie(movieId)}
       id={movieId}
       disabled={isDisabled}
-      className={isDisabled && styles.notAllowedCursor}
+      className={isDisabled ? styles.notAllowedCursor: undefined}
     >
       {isDisabled ? "Nominated" : "Nominate"}
     </button>

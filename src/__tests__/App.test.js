@@ -28,7 +28,9 @@ describe("App", () => {
     // renders the app
     const utils = render(<App />);
     // looks for the searchbar via the placeholder test
-    const input = utils.getByPlaceholderText("Enter your movie title...");
+    const input = utils.getByPlaceholderText(
+      "Enter your movie title..."
+    );
     // ensures that the value of the input is empty string on inital render
     expect(input).toHaveValue("");
     // types in string into searchbar
@@ -78,7 +80,9 @@ describe("App", () => {
     // renders the app
     const utils = render(<App />);
     // looks for the searchbar via the placeholder test
-    const input = utils.getByPlaceholderText("Enter your movie title...");
+    const input = utils.getByPlaceholderText(
+      "Enter your movie title..."
+    );
     // ensures that the value of the input is empty string on inital render
     expect(input).toHaveValue("");
     // types in string into searchbar
