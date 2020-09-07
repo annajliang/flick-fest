@@ -34,6 +34,7 @@ h1 {
 }
 
 .introText {
+    font-size: 2rem;
     margin-top: 3rem;
     color: #1d1d1d;
     width: 60%;
@@ -98,6 +99,18 @@ svg {
 }
 
 @media (max-width: 895px) {
+    .container {
+        height: 55vh;
+    }
+}
+
+@media (max-width: 846px) {
+    .introText {
+        font-size: inherit;
+    }
+}
+
+@media (max-width: 786px) {
     .container {
         height: 70vh;
     }
