@@ -107,7 +107,7 @@
 
 @media (max-width: 1074px) {
     .container {
-        margin: 10rem 0;
+        margin: 12rem 0 6rem;
     }
 
     .movieCard {
