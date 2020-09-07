@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    background-color: #2b3c6b;
+    background-color: #c2e9f8;
     height: 4rem;
     display: flex;
     align-items: center;
@@ -12,11 +12,10 @@
 
 .container p {
     font-weight: 600;
-    color: #fff;
 }
 
 .container span[role="button"] {
-    background-color: rgba(214, 214, 214, 0.15);
+    background-color: #93cef593;
     height: 100%;
     width: 3.5rem;
     font-size: 1.7rem;
@@ -41,7 +40,6 @@
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #fff;
 }
 
 .emoji {

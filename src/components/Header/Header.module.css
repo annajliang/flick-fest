@@ -30,7 +30,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 .introText {
@@ -136,7 +136,13 @@ svg {
     }
 
     .title {
-        padding-top: 4rem;
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width: 512px) {
+    .title {
+        padding-top: 0;
     }
 }
 
@@ -147,10 +153,6 @@ svg {
 }
 
 @media (max-width: 433px) {
-    .title {
-        padding-top: 2rem;
-    }
-
     .introText {
         font-size: 1.5rem;
     }

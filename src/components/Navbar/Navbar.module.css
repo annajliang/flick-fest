@@ -1,11 +1,11 @@
 .container {
-    background-color: #c2e9f8;
+    background-color: #3fd0d4;
     height: 100%;
     position: relative;
     width: 100%;
     z-index: 100;
     top: 0;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.1);
+    padding: 1rem 0;
 }
 
 .container div {
