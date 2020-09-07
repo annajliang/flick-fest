@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./NominateBtn.module.css";
 
 const NominateBtn = ({ nominateMovie, movieId, isDisabled }) => {
   return (
@@ -7,6 +8,7 @@ const NominateBtn = ({ nominateMovie, movieId, isDisabled }) => {
       onClick={() => nominateMovie(movieId)}
       id={movieId}
       disabled={isDisabled}
+      className={isDisabled && styles.notAllowedCursor}
     >
       {isDisabled ? "Nominated" : "Nominate"}
     </button>
