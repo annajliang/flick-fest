@@ -125,6 +125,10 @@
 }
 
 @media (max-width: 564px) {
+    .container {
+        margin-top: -2rem;
+    }
+
     .movieCard {
         box-shadow: 10px 10px #3fd0d4;
     }
