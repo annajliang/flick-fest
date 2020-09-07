@@ -56,10 +56,10 @@ const SearchMovie = ({
 SearchMovie.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
-  userInput: PropTypes.string.isRequired,
-  requestStatus: PropTypes.string.isRequired,
-  searchedInput: PropTypes.string.isRequired,
-  scrollTo: PropTypes.func.isRequired,
+  userInput: PropTypes.string,
+  requestStatus: PropTypes.string,
+  searchedInput: PropTypes.string,
+  scrollTo: PropTypes.func,
 };
 
 export default SearchMovie;
