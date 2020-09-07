@@ -3,13 +3,13 @@ import axios from "axios";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
-// import ViewNomineesBtn from "./components/Buttons/ViewNomineesBtn";
 import Navbar from "./components/Navbar/Navbar"
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import MovieResults from "./components/Results/MovieResults";
 import NominatedMovies from "./components/Results/NominatedMovies";
 import smoothScroll from "./helper/smoothScroll";
 import noPoster from "./assets/noPoster.jpg";
+import "./normalize.css";
 import "./App.css";
 
 export const URL = "https://www.omdbapi.com/";
@@ -55,9 +55,7 @@ const App = () => {
   };
 
   // This method is used as helper to scroll when called from Header.js
-  // @param: event - on which event it gets called - click here
   const scrollTo = () => {
-    // e.preventDefault();
     smoothScroll(searchMoviesRef);
   };
 
