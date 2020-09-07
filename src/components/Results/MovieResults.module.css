@@ -60,7 +60,7 @@
 .movieContent {
     padding: 10px;
     text-align: center;
-    overflow: scroll;
+    overflow-y: auto;
     height: 10rem;
 }
 
