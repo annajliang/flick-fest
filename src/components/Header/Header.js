@@ -17,11 +17,11 @@ const Header = ({ scrollTo }) => {
                 Welcome to Shopify's 1st ever virtual movie awards.
               </p>
               <p className={styles.textMargin}>
-                We want to know which movies are the ultimate fan favorite films
+                We want to know which movies are the ultimate fan favorite
                 of all time so we'll need some help from you, the fan.
               </p>
               <p>
-                Tell us what your top beloved films are by nominating your top 5
+                Tell us what your most beloved films are by nominating your top 5
                 favourte flicks!
               </p>
               <p className={styles.textMargin}>
