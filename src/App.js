@@ -25,6 +25,7 @@ const App = () => {
   const movieResultsRef = useRef();
   const searchMoviesRef = useRef();
 
+  // request made to OMDB api for results based on user's input
   const getMovies = async () => {
     try {
       const movieResult = await axios.get(URL, {
@@ -34,32 +35,38 @@ const App = () => {
         },
       });
 
+      // only store results that are movies
       const moviesOnly = movieResult.data.Search.filter(
         (movie) => movie.Type === "movie"
       );
 
+      // only update states if moviesOnly array contains any movie item(s)
       if (moviesOnly.length > 0) {
         setMovies(moviesOnly);
         setRequestStatus("success");
+
+        // if search term exists in the OMDB api, but it is not a movie, update relevant states to reflect an error
       } else {
         setMovies(moviesOnly);
         setRequestStatus("failure");
         setSearchedInput(userInput);
       }
+      // if search term does not exist in the OMDB api, update relevant states to reflect an error
     } catch (err) {
-      console.log(err);
       setMovies([]);
       setRequestStatus("failure");
       setSearchedInput(userInput);
     }
   };
 
-  // This method is used as helper to scroll when called from Header.js
+  // used to scroll automatically to search movies section when called from Header.js
   const scrollTo = () => {
     smoothScroll(searchMoviesRef);
   };
 
+  // updates the user's nominations list each time a movie is selected
   const nominateMovie = (id) => {
+    // returns the movie that the user has clicked on based on if its id matches an id in the movies array
     const clickedMovie = movies.find((movie) => movie.imdbID === id);
 
     if (nominatedMovies.length < 5) {
@@ -71,7 +78,9 @@ const App = () => {
     }
   };
 
+  // removes a movie from the user's nominations list and updates the nominations list to reflect the changes
   const removeMovie = (id) => {
+    // returns a new array of nominated movies that does not include the movie that the user has chosen to remove
     const newNominatedMovies = nominatedMovies.filter(
       (nominatedMovie) => nominatedMovie.imdbID !== id
     );
@@ -87,23 +96,20 @@ const App = () => {
     setIsBannerVisible(false);
   };
 
+  // to retrieve the nominatedMovies array upon the inital page render, parse it back into an array/object
   useEffect(() => {
     const savedList = window.localStorage.getItem("savedNominees");
     const parsedList = JSON.parse(savedList);
 
+    // only update states if parsedList exists
     if (parsedList !== null) {
       setNominatedMovies([...parsedList]);
       setIsBannerVisible(true);
     }
   }, []);
 
-  useEffect(() => {
-    if (requestStatus === "success") {
-      // scrollTo(movieResultsRef);
-      setTimeout(() => scrollTo(movieResultsRef), 0);
-    }
-  }, [requestStatus]);
-
+  // saves the nominatedMovies array from state into localStorage and converts it into a JSON string
+  // do this everytime the state of nominatedMovies changes
   useEffect(() => {
     window.localStorage.setItem(
       "savedNominees",
@@ -111,15 +117,30 @@ const App = () => {
     );
   }, [nominatedMovies]);
 
+  // automatically scrolls user to the movies results when called from SearchMovie.js onClick event
+  useEffect(() => {
+    if (requestStatus === "success") {
+      scrollTo(movieResultsRef);
+      // setTimeout(() => scrollTo(movieResultsRef), 0);
+    }
+  }, [requestStatus]);
+
+  // run the api call when user has submitted the form
+  // called from SearchMovie.js onClick event
   const handleSubmit = (e) => {
     e.preventDefault();
     getMovies();
   };
 
+  // updates userInput state everytime the user types something into the form
+  // called from SearchMovie.js onClick event
   const handleChange = (e) => {
     setUserInput(e.target.value);
   };
 
+  // will return an array of movie ids for every nominated movie the user clicks on
+  // used in MovieResults.js to check if the id of the movie being clicked on exists in the nominatedMoviesIds array
+  // if it exists then disable the nominate button, otherwise do not disable it
   const nominatedMoviesIds = nominatedMovies.map(
     (nominatedMovie) => nominatedMovie.imdbID
   );

@@ -43,6 +43,7 @@ const SearchMovie = ({
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </form>
+          {/* user's unfound search term will be rendered on page */}
           {requestStatus === "failure" && (
             <NoResults searchedInput={searchedInput} />
           )}
