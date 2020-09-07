@@ -40,6 +40,6 @@
 @media (max-width: 1074px) {
     .slidingSidebar {
         width: 100vw;
-        left: -100%;
+        left: -100vw;
     }
 }
