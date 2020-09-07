@@ -11,7 +11,7 @@ const Header = ({ scrollTo }) => {
         <div className="wrapper">
           <div className={styles.title}>
             <h1>The Shoppies</h1>
-            <img src={wavesUnderline} alt="" className={styles.divider} />
+            <img src={wavesUnderline} alt="squiggly text underline" className={styles.divider} />
             <div className={styles.introText}>
               <p className={styles.textMargin}>
                 Welcome to Shopify's 1st ever virtual movie awards.

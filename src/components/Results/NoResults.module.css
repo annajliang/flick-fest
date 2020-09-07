@@ -6,6 +6,8 @@
     margin-bottom: 1rem;
 }
 
+/* SMALLEST (MOBILE) DEVICES (smaller than or equal to 768px) */
+
 @media (max-width: 433px) {
     .container {
         font-size: 1.5rem;

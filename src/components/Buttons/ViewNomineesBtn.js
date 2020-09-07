@@ -8,7 +8,7 @@ const ViewNomineesBtn = ({ toggleSidebar, nominatedMovies }) => {
   return (
     <div className={styles.container}>
       <button onClick={toggleSidebar} className={styles.viewNominees}>
-        <FontAwesomeIcon icon={faFilm} className={styles.filmIcon} />
+        <FontAwesomeIcon icon={faFilm} className={styles.filmIcon} aria-label="view your nominations" />
         <span className={styles.nomineeNotification}>
           {nominatedMovies.length}
         </span>

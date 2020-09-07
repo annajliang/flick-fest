@@ -35,6 +35,8 @@
     cursor: pointer;
 }
 
+/* MEDIUM DEVICES (greater than 992px) */
+
 @media (max-width: 1074px) {
     .slidingSidebar {
         width: 100vw;

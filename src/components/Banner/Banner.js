@@ -5,9 +5,7 @@ import styles from "./Banner.module.css";
 const Banner = ({ closeBanner }) => {
   return (
     <div className={styles.container}>
-      <p>
-        Congrats! You have nominated 5 films! {" "}
-      </p>
+      <p>Congrats! You have nominated 5 films! </p>
       <span role="img" aria-label="confetti" className={styles.emoji}>
         {" "}
         🎉

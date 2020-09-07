@@ -60,10 +60,8 @@
 .movieContent {
     padding: 10px;
     text-align: center;
-    /* position: relative; */
-    /* text-overflow: ellipsis; */
-     overflow: scroll;
-     height: 10rem;
+    overflow: scroll;
+    height: 10rem;
 }
 
 .movieContent *:not(:last-child) {
