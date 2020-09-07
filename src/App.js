@@ -10,6 +10,7 @@ import NominatedMovies from "./components/Results/NominatedMovies";
 import smoothScroll from "./helper/smoothScroll";
 import noPoster from "./assets/noPoster.jpg";
 import "./normalize.css";
+import "./helper/utilities.css";
 import "./App.css";
 
 export const URL = "https://www.omdbapi.com/";

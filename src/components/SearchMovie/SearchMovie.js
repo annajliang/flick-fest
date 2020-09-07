@@ -23,7 +23,7 @@ const SearchMovie = ({
           </h2>
           <Instructions />
           <form action="input" onSubmit={handleSubmit}>
-            <label htmlFor="searchMovie"></label>
+            <label htmlFor="searchMovie" className="srOnly">Search Movie</label>
             <input
               type="search"
               id="searchMovie"
