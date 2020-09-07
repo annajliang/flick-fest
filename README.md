@@ -4,7 +4,7 @@ View the project <a href="https://shopify-movie.vercel.app/">here</a>.
 
 ![Screenshot](src/assets/screenshot.png) 
 
-An app to nominate your top 5 favourite films (films provided by <a href="http://www.omdbapi.com/">OMDB API</a>).
+An app to nominate your top 5 favourite films (data provided by <a href="http://www.omdbapi.com/">OMDB API</a>).
 
 ## Features ✨
 - Tech and concepts used: 
