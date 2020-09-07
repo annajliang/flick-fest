@@ -125,19 +125,19 @@
         margin-left: 3rem;
         margin-right: 3rem;
    }
+}
 
-     .movieThumbnail {
-         width: 50%;
-     }
+@media (max-width: 934px) {
+   .flexContainer {
+       grid-template-columns: 1fr;
+   }
+
+    .movieThumbnail {
+        width: 20rem;
+    }
 }
 
 /* SMALLEST (MOBILE) DEVICES (smaller than or equal to 768px) */
-
-@media (max-width: 749px) {
-   .movieThumbnail {
-       width: 55%;
-   }
-}
 
 @media (max-width: 525px) {
     .movieCard {

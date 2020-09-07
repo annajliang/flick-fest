@@ -10,7 +10,7 @@ header {
 .container {
     background-color: #3fd0d4;
     background-size: cover;
-    height: 60vh;
+    height: 50vh;
     position: relative;
     z-index: 99;
 }
