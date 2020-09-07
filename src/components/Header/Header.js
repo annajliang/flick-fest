@@ -14,17 +14,14 @@ const Header = ({ scrollTo }) => {
             <img src={wavesUnderline} alt="squiggly text underline" className={styles.divider} />
             <div className={styles.introText}>
               <p className={styles.textMargin}>
-                Welcome to Shopify's 1st ever virtual movie awards.
+                Welcome to Shopify's 1st ever virtual movie awards!
               </p>
               <p className={styles.textMargin}>
-                We want to know which movies are the ultimate fan favorites of
-                all time so we'll need some help from you to tell us
-                what your most beloved films are by nominating your top 5
-                favourte flicks!
+                We want to know which movies are the all time fan favorites so we'll need your help! Tell us what your most beloved films are by nominating your top 5
+                favourites.
               </p>
               <p className={styles.textMargin}>
-                We will close this poll and announce the results on December 8
-                at 9 a.m. ET. so get your votes in asap!
+                Polls close on December 8 at 9 a.m. EST. so get your votes in ASAP!
               </p>
               <button className={styles.voteNowBtn} onClick={scrollTo}>
                 Vote Now

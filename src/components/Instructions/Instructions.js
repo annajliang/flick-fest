@@ -27,7 +27,7 @@ const Instructions = () => {
       </li>
       <li className={`${styles.instructionsItem}`}>
         <span>3</span>
-        <p>Change your mind? Click remove to edit your nominees list.</p>
+        <p>Change your mind? Click the film icon and click remove to edit your list.</p>
         <img
           src={verticalDivider}
           className={styles.verticalDivider}
