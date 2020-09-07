@@ -23,7 +23,7 @@ const Instructions = () => {
       </li>
       <li className={styles.instructionsItem}>
         <span>4</span>
-        <p>Once you're satisfied with your nominees list, click submit to cast your votes!</p>
+        <p>Once you're satisfied with your nominees list, you're done!</p>
       </li>
     </ol>
   );
