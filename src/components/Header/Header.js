@@ -24,7 +24,7 @@ const Header = ({ scrollTo }) => {
               </p>
               <p className={styles.textMargin}>
                 We will close this poll and announce the results on December 8
-                at 9 a.m. ET. so get your votes in asap!.
+                at 9 a.m. ET. so get your votes in asap!
               </p>
               <button className={styles.voteNowBtn} onClick={scrollTo}>
                 Vote Now
