@@ -8,11 +8,10 @@ An app to nominate your top 5 favourite films (data provided by <a href="http://
 
 ## Features ✨
 - Tech and concepts used: 
-    * Unit and Integration Tests with React Testing Library
+    * Unit and Integration Tests with Jest and React Testing Library
     * React.js (bootstrapped with Create React App)
     * Modern ES6
     * CSS Modules
-    * HTML5 and modern CSS3 properties (Flexbox, CSS Grids)
 
 ## Get Started 👩‍💻
 
