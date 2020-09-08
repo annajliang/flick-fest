@@ -14,8 +14,8 @@ const MovieResults = (props) => {
               <li
                 key={imdbID}
                 className={`${styles.movieCard} ${
-                  props.nominatedMoviesIds.includes(imdbID) &&
-                  styles.clickedMovieCard
+                  props.nominatedMoviesIds.includes(imdbID) ?
+                  styles.clickedMovieCard : undefined
                 }`}
               >
                 <div className={styles.movieThumbnail}>

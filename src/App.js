@@ -162,7 +162,7 @@ const App = () => {
           moviePoster={moviePoster}
         />
       </Sidebar>
-      <div className={`content ${isSidebarOpened && "slideContent"}`}>
+      <div className={`content ${isSidebarOpened ? "slideContent" : undefined}`}>
         <div className="fixedContainer">
           {nominatedMovies.length === 5 && isBannerVisibie && (
             <Banner closeBanner={closeBanner} />

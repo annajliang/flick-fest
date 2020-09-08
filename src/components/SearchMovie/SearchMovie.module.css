@@ -86,7 +86,7 @@ input[type="search"] {
 
 @media (max-width: 564px) {
     .backgroundPattern {
-        height: 100vh;
+        height: 105vh;
     }
 
     .searchArea {
