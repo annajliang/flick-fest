@@ -8,8 +8,8 @@ import {
   screen,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { URL } from "./App";
-import App from "./App";
+import { URL } from "../App";
+import App from "../App";
 
 // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
 window.HTMLElement.prototype.scrollIntoView = function () {};
