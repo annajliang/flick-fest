@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar"
 import SearchMovie from "./components/SearchMovie/SearchMovie";
 import MovieResults from "./components/Results/MovieResults";
 import NominatedMovies from "./components/Results/NominatedMovies";
+import Footer from "./components/Footer/Footer";
 import smoothScroll from "./helper/smoothScroll";
 import noPoster from "./assets/noPoster.jpg";
 import "./normalize.css";
@@ -200,6 +201,7 @@ const App = () => {
             )}
           </section>
         </main>
+        <Footer />
       </div>
     </div>
   );

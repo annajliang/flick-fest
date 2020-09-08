@@ -1,0 +1,31 @@
+.container {
+    background: #2b3c6b;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+}
+
+.container p {
+    font-weight: 600;
+    color: #fff;
+}
+
+.container a {
+    color: #FFBDBA;
+    border-bottom: 1px solid transparent;
+    transition: all .3s;
+}
+
+.container a:hover, 
+.container a:focus {
+    border-bottom: 1px solid #FFBDBA;
+}
+
+@media (max-width: 450px) {
+    .container p {
+        font-size: 1.4rem;
+    }
+}
