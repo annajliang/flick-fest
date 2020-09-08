@@ -30,6 +30,28 @@ To start the development server...
 ```bash
 npm start
 ```
+## Run Tests 👩‍🔬
+
+To run integration tests...
+
+```bash
+npm test src/__tests__/App.test.js
+```
+
+To run unit tests...
+
+```bash
+npm test src/components/Buttons/__test__/NominateBtn.test.js
+```
+```bash
+npm test src/components/SearchMovie/__test__/SearchMovie.test.js
+```
+
+To run all tests at once...
+
+```bash
+npm test
+```
 
 ## To Do 📝
 (Improvements I would like to make if I had more time)
