@@ -33,7 +33,7 @@ input[type="search"] {
     height: 7rem;
     padding: 0 2rem;
     font-size: 2rem;
-    border: 3px solid #3fd0d4;
+    border: 3px solid #59D4D7;
     font-family: 'Montserrat', sans-serif;;
 }
 
@@ -41,12 +41,12 @@ input[type="search"] {
     position: relative;
     padding: 3rem 4rem;
     background-color: #fff;
-    box-shadow: 16px 16px #3fd0d4;
+    box-shadow: 16px 16px #59D4D7;
     z-index: 100;
 }
 
 .searchBtn {
-    background-color: #3fd0d4;
+    background-color: #59D4D7;
     position: absolute;
     right: 0;
     height: 100%;
@@ -91,7 +91,7 @@ input[type="search"] {
 
     .searchArea {
         margin: 0 2rem;
-        box-shadow: 10px 10px #3fd0d4;
+        box-shadow: 10px 10px #59D4D7;
     }
 }
 

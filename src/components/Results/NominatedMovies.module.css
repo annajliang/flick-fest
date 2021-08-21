@@ -49,7 +49,7 @@
     width: 100%;
     border: 2px solid #D4D7DE;
     position: relative;
-    box-shadow: 8px 8px #3fd0d4;
+    box-shadow: 8px 8px #59D4D7;
 }
 
 .movieCard:not(:last-child) {

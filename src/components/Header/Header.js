@@ -10,11 +10,11 @@ const Header = ({ scrollTo }) => {
       <div className={`${styles.container}`}>
         <div className="wrapper">
           <div className={styles.title}>
-            <h1>The Shoppies</h1>
+            <h1>Flick Fest</h1>
             <img src={wavesUnderline} alt="squiggly text underline" className={styles.divider} />
             <div className={styles.introText}>
               <p className={styles.textMargin}>
-                Welcome to Shopify's 1st ever virtual movie awards!
+                Welcome to Flick Fest's 1st ever virtual movie awards!
               </p>
               <p className={styles.textMargin}>
                 We want to know which movies are the all time fan favorites so we'll need your help! Tell us what your most beloved films are by nominating your top 5

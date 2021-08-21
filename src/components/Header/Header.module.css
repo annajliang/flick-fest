@@ -8,7 +8,7 @@ header {
 }
 
 .container {
-    background-color: #3fd0d4;
+    background-color: #59D4D7;
     background-size: cover;
     height: 50vh;
     position: relative;
@@ -20,10 +20,10 @@ h1 {
     text-align: left;
     font-size: 9rem;
     letter-spacing: -4px;
-    text-shadow: 6px 6px #f2cee6;
+    text-shadow: 6px 6px #febdba;
     -webkit-text-fill-color: #fff;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #383435;
+    -webkit-text-stroke-color: #2b3c6b;
 }
 
 .title {
@@ -54,6 +54,7 @@ svg {
 .divider {
     width: 30rem;
     position: relative;
+    top: 5px;
     z-index: -1;
 }
 

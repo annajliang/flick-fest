@@ -10,7 +10,7 @@
     text-shadow: 6px 6px #3fcfd4a2;
     -webkit-text-fill-color: #fff;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #383435; 
+    -webkit-text-stroke-color: #2b3c6b;
 }
 
 .gridContainer {
@@ -49,7 +49,7 @@
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
     border: 2px solid #D4D7DE;
     position: relative;
-    box-shadow: 12px 12px #3fd0d4;
+    box-shadow: 12px 12px #59D4D7;
 }
 
 .movieThumbnail {
@@ -126,7 +126,7 @@
 
 @media (max-width: 564px) {
     .movieCard {
-        box-shadow: 10px 10px #3fd0d4;
+        box-shadow: 10px 10px #59D4D7;
     }
 }
 
