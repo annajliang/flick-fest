@@ -1,4 +1,4 @@
-# The Shoppies 🎬
+# Flick Fest 🎬
 
 View the project <a href="https://shopify-movie.vercel.app/">here</a>.
 
