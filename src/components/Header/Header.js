@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 
 const Header = ({ scrollTo }) => {
   return (
-    <header>
+    <>
       <div className={`${styles.container}`}>
         <div className="wrapper">
           <div className={styles.title}>
@@ -31,7 +31,7 @@ const Header = ({ scrollTo }) => {
         </div>
       </div>
       <HeaderDivider />
-    </header>
+    </>
   );
 };
 
