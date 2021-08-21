@@ -1,6 +1,6 @@
 # Flick Fest 🎬
 
-View the project <a href="https://shopify-movie.vercel.app/">here</a>.
+View the project <a href="https://flick-fest.vercel.app/">here</a>.
 
 ![Screenshot](src/assets/screenshot.png) 
 
