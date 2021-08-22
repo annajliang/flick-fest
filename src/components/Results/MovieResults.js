@@ -3,24 +3,33 @@ import NominateBtn from "../Buttons/NominateBtn";
 import PropTypes from "prop-types";
 import styles from "./MovieResults.module.css";
 
-const MovieResults = (props) => {
+const MovieResults = ({
+  // movieResultsRef,
+  movies,
+  nominatedMoviesIds,
+  moviePoster,
+  nominateMovie,
+}) => {
   return (
     <div className={styles.container}>
       <div className="wrapper">
-        <h2 className={styles.divider}>Pick Your Flicks!</h2>
+        <h2 className={styles.divider}>
+          Pick Your Flicks!
+        </h2>
         <ul className={styles.gridContainer}>
-          {props.movies.map(({ Title, Year, imdbID, Poster }) => {
+          {movies.map(({ Title, Year, imdbID, Poster }) => {
             return (
               <li
                 key={imdbID}
                 className={`${styles.movieCard} ${
-                  props.nominatedMoviesIds.includes(imdbID) ?
-                  styles.clickedMovieCard : undefined
+                  nominatedMoviesIds.includes(imdbID)
+                    ? styles.clickedMovieCard
+                    : undefined
                 }`}
               >
                 <div className={styles.movieThumbnail}>
                   <img
-                    src={props.moviePoster(Poster)}
+                    src={moviePoster(Poster)}
                     alt="Poster of movie"
                     className="posterSize"
                   />
@@ -32,8 +41,8 @@ const MovieResults = (props) => {
                 <div className={styles.btnContainer}>
                   <NominateBtn
                     text="Nominate"
-                    nominateMovie={props.nominateMovie}
-                    isDisabled={props.nominatedMoviesIds.includes(imdbID)}
+                    nominateMovie={nominateMovie}
+                    isDisabled={nominatedMoviesIds.includes(imdbID)}
                     movieId={imdbID}
                     movieTitle={Title}
                     movieYear={Year}
