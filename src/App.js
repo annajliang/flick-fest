@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import smoothscroll from "smoothscroll-polyfill";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -100,6 +101,8 @@ const App = () => {
 
   // to retrieve the nominatedMovies array upon the inital page render, parse it back into an array/object
   useEffect(() => {
+    // execute the smooth scroll polyfill
+    smoothscroll.polyfill();
     const savedList = window.localStorage.getItem("savedNominees");
     const parsedList = JSON.parse(savedList);
 
