@@ -8,7 +8,7 @@ import SearchMovie from "./components/SearchMovie/SearchMovie";
 import MovieResults from "./components/Results/MovieResults";
 import NominatedMovies from "./components/Results/NominatedMovies";
 import Footer from "./components/Footer/Footer";
-import smoothScroll from "./helper/smoothScroll";
+import { scrollToSearch, scrollToResults } from "./helper/smoothScroll";
 import noPoster from "./assets/noPoster.jpg";
 import "./normalize.css";
 import "./helper/utilities.css";
@@ -24,7 +24,7 @@ const App = () => {
   const [requestStatus, setRequestStatus] = useState("ready");
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
   const [isBannerVisibie, setIsBannerVisible] = useState(false);
-  const movieResultsRef = useRef();
+  // const movieResultsRef = useRef();
   const searchMoviesRef = useRef();
 
   // request made to OMDB api for results based on user's input
@@ -63,7 +63,7 @@ const App = () => {
 
   // used to scroll automatically to search movies section when called from Header.js
   const scrollTo = () => {
-    smoothScroll(searchMoviesRef);
+    scrollToSearch(searchMoviesRef);
   };
 
   // updates the user's nominations list each time a movie is selected
@@ -122,8 +122,7 @@ const App = () => {
   // automatically scrolls user to the movies results when called from SearchMovie.js onClick event
   useEffect(() => {
     if (requestStatus === "success") {
-      scrollTo(movieResultsRef);
-      // setTimeout(() => scrollTo(movieResultsRef), 0);
+      scrollToResults();
     }
   }, [requestStatus]);
 
@@ -180,19 +179,21 @@ const App = () => {
           />
         </header>
         <main>
-          <section ref={searchMoviesRef}>
+          <section>
             <SearchMovie
+              searchMoviesRef={searchMoviesRef}
               handleSubmit={handleSubmit}
               handleChange={handleChange}
               requestStatus={requestStatus}
               searchedInput={searchedInput}
               userInput={userInput}
-              scrollTo={scrollTo}
+              scrollToResults={scrollToResults}
             />
           </section>
-          <section ref={movieResultsRef}>
+          <section>
             {requestStatus === "success" && (
               <MovieResults
+                // movieResultsRef={movieResultsRef}
                 movies={movies}
                 nominatedMoviesIds={nominatedMoviesIds}
                 nominateMovie={nominateMovie}

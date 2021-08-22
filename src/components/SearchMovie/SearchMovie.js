@@ -7,23 +7,30 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./SearchMovie.module.css";
 
 const SearchMovie = ({
+  searchMoviesRef,
   handleSubmit,
   handleChange,
   userInput,
   requestStatus,
   searchedInput,
-  scrollTo,
+  scrollToResults,
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="searchContainer">
       <div className={styles.backgroundPattern}>
         <div className={`wrapper ${styles.searchArea}`}>
-          <h2 className={styles.searchMovieHeader}>
+          <h2
+            className={styles.searchMovieHeader}
+            ref={searchMoviesRef}
+            id="searchHeader"
+          >
             Search <span>Movie</span>
           </h2>
           <Instructions />
           <form action="input" onSubmit={handleSubmit}>
-            <label htmlFor="searchMovie" className="srOnly">Search Movie</label>
+            <label htmlFor="searchMovie" className="srOnly">
+              Search Movie
+            </label>
             <input
               type="search"
               id="searchMovie"
@@ -38,7 +45,7 @@ const SearchMovie = ({
               className={styles.searchBtn}
               aria-label="submit search"
               data-testid="searchBtn"
-              onClick={scrollTo}
+              onClick={scrollToResults}
             >
               <FontAwesomeIcon icon={faSearch} />
             </button>

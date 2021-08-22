@@ -5,7 +5,7 @@ import styles from "./Navbar.module.css";
 
 const Navbar = ({ toggleSidebar, nominatedMovies }) => {
   return (
-    <nav className={styles.container}>
+    <nav className={styles.container} id="stickyNav">
       <div className="wrapper">
         <ViewNomineesBtn
           toggleSidebar={toggleSidebar}
