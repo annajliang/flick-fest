@@ -66,10 +66,6 @@ input[type="search"] {
 /* MEDIUM DEVICES (greater than 992px) */
 
 @media (max-width: 1035px) {
-    .backgroundPattern {
-        height: 80vh;
-    }
-
     form {
         width: 100%;
     }
@@ -86,7 +82,7 @@ input[type="search"] {
 
 @media (max-width: 564px) {
     .backgroundPattern {
-        height: 105vh;
+        height: 100vh;
     }
 
     .searchArea {
